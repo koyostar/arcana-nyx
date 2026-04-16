@@ -17,9 +17,11 @@
   ],
   "scripts": {
     "build": "tsc",
+    "export:json": "node dist/scripts/export-json.js",
     "test": "echo \"no tests yet\""
   },
   "devDependencies": {
+    "@types/node": "^25.6.0",
     "typescript": "^6.0.2"
   }
 }
