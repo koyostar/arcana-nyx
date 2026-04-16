@@ -1,0 +1,5 @@
+[project]
+name = "arcana-nyx-tools"
+version = "0.1.0"
+description = "Python tools for validating and preparing tarot data"
+requires-python = ">=3.11"
