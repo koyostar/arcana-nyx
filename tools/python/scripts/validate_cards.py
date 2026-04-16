@@ -25,7 +25,7 @@ def validate_cards(cards: list[dict]) -> None:
 
 def main() -> None:
     root = Path(__file__).resolve().parent.parent
-    data_path = root / "cards.sample.json"
+    data_path = root / "cards.generated.json"
 
     with data_path.open("r", encoding="utf-8") as file:
         cards = json.load(file)
