@@ -11,7 +11,7 @@ export const majorArcana: TarotCard[] = [
     suit: null,
     number: 0,
     image: {
-      url: "/images/rider-waite/the-fool.jpg",
+      url: "/images/rider-waite/00-TheFool.png",
     },
     description: {
       en: "A carefree traveler steps toward the edge of a cliff, guided by faith and curiosity.",
@@ -42,7 +42,7 @@ export const majorArcana: TarotCard[] = [
     suit: null,
     number: 1,
     image: {
-      url: "/images/major/the-magician.jpg",
+      url: "/images/rider-waite/01-TheMagician.png",
     },
     description: {
       en: "A figure channels energy between heaven and earth, using tools of the four elements to create.",
@@ -73,7 +73,7 @@ export const majorArcana: TarotCard[] = [
     suit: null,
     number: 2,
     image: {
-      url: "/images/major/the-high-priestess.jpg",
+      url: "/images/rider-waite/02-TheHighPriestess.png",
     },
     description: {
       en: "A serene guardian of hidden knowledge sits between pillars, embodying intuition and mystery.",
