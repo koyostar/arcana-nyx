@@ -10,8 +10,8 @@ export const getCardById = (id: string): TarotCard | undefined => {
 };
 
 export const getCardsByArcana = (
-  cards: TarotCard[],
+  cardList: TarotCard[],
   arcana: "major" | "minor",
 ): TarotCard[] => {
-  return cards.filter((card) => card.arcana === arcana);
+  return cardList.filter((card) => card.arcana === arcana);
 };
