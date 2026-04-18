@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import * as React from "react";
-import { ThemeProvider, CssBaseline, createTheme } from "@mui/material";
+import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: "Arcana Nyx",
@@ -12,21 +12,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const theme = createTheme({
-    palette: {
-      mode: "light",
-    },
-    typography: {
-      fontFamily: "Roboto, Arial, Helvetica, sans-serif",
-    },
-  });
   return (
     <html lang="en">
       <body>
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
-          {children}
-        </ThemeProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
