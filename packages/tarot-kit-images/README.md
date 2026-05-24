@@ -31,7 +31,7 @@ yarn add @cometpisces/tarot-kit-images
 import { getImagePath } from '@cometpisces/tarot-kit-images';
 
 // Get image filename for a card
-const foolImage = getImagePath('major-00-fool');
+const foolImage = getImagePath('the-fool');
 console.log(foolImage); // "00-TheFool.png"
 ```
 
@@ -49,7 +49,7 @@ import { getCardById, drawRandomCard } from '@cometpisces/tarot-kit';
 import { getImagePath } from '@cometpisces/tarot-kit-images';
 
 // Get a specific card with its image
-const fool = getCardById('major-00-fool');
+const fool = getCardById('the-fool');
 const imagePath = getImagePath(fool.id);
 console.log(`${fool.name.en}: ${imagePath}`);
 // Output: "The Fool: 00-TheFool.png"
@@ -124,12 +124,12 @@ Get the image filename for a card by its ID.
 ```typescript
 import { getImagePath } from '@cometpisces/tarot-kit-images';
 
-const imagePath = getImagePath('major-00-fool'); // "00-TheFool.png"
-const missing = getImagePath('invalid-id');       // undefined
+const imagePath = getImagePath('the-fool');  // "00-TheFool.png"
+const missing = getImagePath('invalid-id'); // undefined
 ```
 
 **Parameters:**
-- `cardId` - The card ID from @cometpisces/tarot-kit (e.g., 'major-00-fool', 'cups-05', 'swords-14-king')
+- `cardId` - The card ID from @cometpisces/tarot-kit (e.g., 'the-fool', 'five-of-cups', 'king-of-swords')
 
 **Returns:**
 - The image filename (e.g., '00-TheFool.png') or `undefined` if not found
@@ -165,9 +165,9 @@ Check if an image exists for a given card ID.
 ```typescript
 import { hasImage } from '@cometpisces/tarot-kit-images';
 
-if (hasImage('major-00-fool')) {
+if (hasImage('the-fool')) {
   // Safe to use getImagePath
-  const path = getImagePath('major-00-fool');
+  const path = getImagePath('the-fool');
 }
 ```
 
@@ -186,7 +186,7 @@ The complete mapping object of card IDs to filenames.
 ```typescript
 import { imageMap } from '@cometpisces/tarot-kit-images';
 
-console.log(imageMap['major-00-fool']); // "00-TheFool.png"
+console.log(imageMap['the-fool']); // "00-TheFool.png"
 
 // Iterate over all mappings
 Object.entries(imageMap).forEach(([cardId, filename]) => {
@@ -219,9 +219,9 @@ import type { } from '@cometpisces/tarot-kit-images';
 import { getImagePath, getAllImagePaths, hasImage } from '@cometpisces/tarot-kit-images';
 
 // Type-safe usage
-const path: string | undefined = getImagePath('major-00-fool');
+const path: string | undefined = getImagePath('the-fool');
 const allPaths: string[] = getAllImagePaths();
-const exists: boolean = hasImage('cups-05');
+const exists: boolean = hasImage('five-of-cups');
 ```
 
 **Combined with @cometpisces/tarot-kit:**
@@ -231,7 +231,7 @@ import type { TarotCard, DrawnCard } from '@cometpisces/tarot-kit';
 import { getCardById, drawRandomCard } from '@cometpisces/tarot-kit';
 import { getImagePath } from '@cometpisces/tarot-kit-images';
 
-const card: TarotCard = getCardById('major-00-fool');
+const card: TarotCard = getCardById('the-fool');
 const imagePath: string | undefined = getImagePath(card.id);
 
 const drawn: DrawnCard = drawRandomCard();
@@ -260,7 +260,7 @@ Then use in components:
 import Image from 'next/image';
 import { getImagePath } from '@cometpisces/tarot-kit-images';
 
-const imagePath = getImagePath('major-00-fool');
+const imagePath = getImagePath('the-fool');
 
 <Image
   src={`/tarot/${imagePath}`}
@@ -290,7 +290,7 @@ cp -r node_modules/@cometpisces/tarot-kit-images/images public/tarot
 import { getCardById } from '@cometpisces/tarot-kit';
 import { getImagePath } from '@cometpisces/tarot-kit-images';
 
-const card = getCardById('major-00-fool');
+const card = getCardById('the-fool');
 const imagePath = getImagePath(card.id);
 </script>
 
