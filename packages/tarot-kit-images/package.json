@@ -1,0 +1,41 @@
+{
+  "name": "@cometpisces/tarot-kit-images",
+  "version": "0.1.0",
+  "description": "78 Rider-Waite tarot card images with TypeScript helpers - companion to @cometpisces/tarot-kit for building tarot reading apps",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./images/*": "./images/*"
+  },
+  "files": [
+    "dist",
+    "images"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.2"
+  },
+  "keywords": [
+    "tarot",
+    "rider-waite",
+    "images",
+    "cards",
+    "divination",
+    "tarot-cards",
+    "major-arcana",
+    "minor-arcana",
+    "card-images",
+    "typescript",
+    "react",
+    "nextjs",
+    "vue"
+  ]
+}
