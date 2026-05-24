@@ -115,10 +115,29 @@ Each card includes:
 - **Reading Aspects**: Context-specific meanings (love, career, spiritual, shadow)
 - **Metadata**: Keywords, numerology, astrology, elemental associations, and symbolism
 
+## Card Images
+
+This package contains **data only**. For Rider-Waite tarot card images, install the companion package:
+
+```bash
+npm install @cometpisces/tarot-kit-images
+```
+
+### Using with Images
+
+```typescript
+import { getCardById, drawRandomCard } from '@cometpisces/tarot-kit';
+import { getImagePath } from '@cometpisces/tarot-kit-images';
+
+const drawn = drawRandomCard();
+const imagePath = getImagePath(drawn.card.id);
+
+// Use in your app
+<img src={`/images/${imagePath}`} alt={drawn.card.name.en} />
+```
+
+See [@cometpisces/tarot-kit-images](https://www.npmjs.com/package/@cometpisces/tarot-kit-images) for complete documentation.
+
 ## License
 
 MIT
-
-## Contributing
-
-This package is part of the [arcana-nyx](https://github.com/cometpisces/arcana-nyx) project.

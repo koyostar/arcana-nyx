@@ -1,7 +1,7 @@
 {
   "name": "@cometpisces/tarot-kit",
-  "version": "0.1.1",
-  "description": "Rider-Waite tarot data and helper utilities",
+  "version": "0.1.2",
+  "description": "Complete Rider-Waite tarot deck data with card meanings, drawing utilities, and localization - TypeScript library for building tarot reading apps",
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.js",
@@ -23,5 +23,18 @@
   "devDependencies": {
     "@types/node": "^25.6.0",
     "typescript": "^6.0.2"
-  }
+  },
+  "keywords": [
+    "tarot",
+    "rider-waite",
+    "tarot-cards",
+    "card-meanings",
+    "divination",
+    "major-arcana",
+    "minor-arcana",
+    "card-reading",
+    "typescript",
+    "localization",
+    "i18n"
+  ]
 }
