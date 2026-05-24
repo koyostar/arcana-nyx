@@ -157,19 +157,22 @@ Key types:
 - Data model & all helper functions
 - Python validation pipeline
 - Next.js integration
-- Daily Draw (`/daily`) — draw, display name/orientation/description/meaning
+- Daily Draw (`/daily`) — draw, display name/orientation/description/meaning with language toggle
 - Full 78-card dataset — all 22 major arcana + 56 minor arcana (bilingual, with meanings + images)
 - Card Library (`/cards`) — grid view, suit/arcana filter, EN/ZH toggle, card count
 - Home page — card count summary, navigation to Daily Draw and Card Library
+- Fixed Client Component error (added `"use client"` to page.tsx)
+- Dev server running successfully on http://localhost:3000
 
 ### In Progress
 
 - Image rendering (Rider-Waite images not yet placed in `/public/images/rider-waite/`)
-- Daily Draw polish (redraw, language toggle, card image display)
+- Daily Draw lock (one draw per day, stored locally)
+- Custom font loading cleanup in `layout.tsx`
 
 ### Known Issues
 
-- `@mui/material` is used in `apps/web` but not declared in `apps/web/package.json` — add it
+- Manual font `<link>` tags in `apps/web/src/app/layout.tsx` trigger `@next/next/no-page-custom-font`
 
 ### Not Started
 
@@ -189,9 +192,6 @@ Key types:
 
 ### Phase 14 — Daily Draw Polish
 
-- Show card image
-- Add redraw button + clear state
-- Add language toggle (EN / ZH)
 - Daily draw lock (one draw per day, stored by date in localStorage)
 
 ---
@@ -201,16 +201,18 @@ Key types:
 - Route: `/cards/[id]`
 - Larger card image
 - Full description
-- Keywords chips
+- Core keyword display
 - Upright + reversed meaning sections
-- Language toggle
+- Reading aspects sections
+- Contextual meanings sections
 - Back to Card Library link
 
 ---
 
-### Phase 16 — Fix MUI Dependency
+### Phase 16 — App Shell Follow-up
 
-- Add `@mui/material` and `@emotion/react` + `@emotion/styled` to `apps/web/package.json`
+- Replace manual font `<link>` tags with a supported Next font or local asset setup
+- Set `turbopack.root` to silence the multi-lockfile warning during builds
 
 ---
 
@@ -303,9 +305,9 @@ Stage 2 — Supabase:
 
 ## 5. Recommended Next Steps
 
-1. Fix `@mui/material` missing from `apps/web/package.json`
+1. Replace manual font `<link>` tags with a supported Next font or local asset setup
 2. Place Rider-Waite images in `/public/images/rider-waite/`
-3. Polish `/daily` (image, redraw, language toggle, daily lock)
+3. Add daily draw lock with localStorage
 4. Build `/cards/[id]` detail page
 5. Improve Python validation checks
 6. Choose next feature: Quiz (learning) or Spread (reading)
@@ -320,10 +322,11 @@ Stage 2 — Supabase:
 - [x] Full 78-card dataset
 - [x] Card Library with filters
 - [x] Home page
-- [ ] Daily Draw polished (image + lock + language)
-- [ ] Card Detail page
-- [ ] Card images placed in `/public`
-- [ ] MUI dependency declared in package.json
+- [x] Dev server running
+- [ ] Replace manual layout font links with a supported Next font setup
+- [ ] Daily Draw polished (daily lock)
+- [ ] Card Detail page (`/cards/[id]`)
+- [ ] Card images placed in `/public/images/rider-waite/`
 
 ### Milestone B — Learning Mode
 
