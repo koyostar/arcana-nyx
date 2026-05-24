@@ -24,6 +24,9 @@
 .DS_Store
 *.pem
 
+# images copied from npm packages
+/public/images/rider-waite
+
 # debug
 npm-debug.log*
 yarn-debug.log*
