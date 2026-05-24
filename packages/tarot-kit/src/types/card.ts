@@ -11,6 +11,21 @@ export interface TarotCardMeaning {
   reversed: LocalizedText;
 }
 
+export interface TarotCardReadingAspects {
+  currentSituation: TarotCardMeaning;
+  innerState: TarotCardMeaning;
+  rootCause: TarotCardMeaning;
+  development: TarotCardMeaning;
+  advice: TarotCardMeaning;
+}
+
+export interface TarotCardContextualMeanings {
+  love: TarotCardMeaning;
+  work: TarotCardMeaning;
+  interpersonal: TarotCardMeaning;
+  others: TarotCardMeaning;
+}
+
 export interface TarotCard {
   id: string;
   name: LocalizedText;
@@ -21,11 +36,10 @@ export interface TarotCard {
     url: string;
   };
   description: LocalizedText;
-  keywords: {
-    en: string[];
-    zh: string[];
-  };
+  coreKeyword: LocalizedText;
   meaning: TarotCardMeaning;
+  readingAspects: TarotCardReadingAspects;
+  contextualMeanings: TarotCardContextualMeanings;
 }
 
 export interface DrawnCard {
