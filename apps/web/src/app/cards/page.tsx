@@ -12,12 +12,22 @@ import {
   ToggleButton,
   ToggleButtonGroup,
   Typography,
+  Dialog,
+  DialogContent,
+  IconButton,
+  Tabs,
+  Tab,
 } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 import {
   getAllCards,
   getLocalizedText,
   type SupportedLanguage,
+  type TarotCard,
 } from "@cometpisces/tarot-kit";
+import { TarotCardImage } from "@/components/TarotCardImage";
+import { ReadingAspectSection } from "@/components/ReadingAspectSection";
+import { ContextualMeaningSection } from "@/components/ContextualMeaningSection";
 
 const allCards = getAllCards();
 
@@ -46,6 +56,8 @@ const suitColors = {
 
 export default function CardsPage() {
   const [filter, setFilter] = useState("all");
+  const [selectedCard, setSelectedCard] = useState<TarotCard | null>(null);
+  const [orientationTab, setOrientationTab] = useState<0 | 1>(0);
   const searchParams = useSearchParams();
   const lang: SupportedLanguage =
     searchParams.get("lang") === "zh" ? "zh" : "en";
@@ -62,6 +74,11 @@ export default function CardsPage() {
             swords: "宝剑",
             pentacles: "星币",
           },
+          upright: "正位",
+          reversed: "逆位",
+          coreKeyword: "核心關鍵字",
+          description: "描述",
+          meaning: "含义",
         }
       : {
           title: "Card Library",
@@ -74,6 +91,11 @@ export default function CardsPage() {
             swords: "Swords",
             pentacles: "Pentacles",
           },
+          upright: "Upright",
+          reversed: "Reversed",
+          coreKeyword: "Core Keyword",
+          description: "Description",
+          meaning: "Meaning",
         };
 
   const displayed = allCards.filter((card) => {
@@ -126,90 +148,252 @@ export default function CardsPage() {
         </Stack>
 
         <Grid container spacing={1.8}>
-          {displayed.map((card) => (
-            <Grid key={card.id} size={{ xs: 6 }}>
-              <Paper
-                elevation={0}
-                sx={{ bgcolor: "transparent", border: 0, position: "relative" }}
-              >
-                {(() => {
-                  const suitKey =
-                    card.arcana === "major"
-                      ? "major"
-                      : ((card.suit ?? "wands") as
-                          | "wands"
-                          | "cups"
-                          | "swords"
-                          | "pentacles");
-                  const suitTone = suitColors[suitKey];
+          {displayed.map((card) => {
+            const suitKey =
+              card.arcana === "major"
+                ? "major"
+                : ((card.suit ?? "wands") as
+                    | "wands"
+                    | "cups"
+                    | "swords"
+                    | "pentacles");
+            const suitTone = suitColors[suitKey];
 
-                  return (
-                    <>
-                      <Box
+            return (
+              <Grid key={card.id} size={{ xs: 6 }}>
+                <Paper
+                  elevation={0}
+                  onClick={() => setSelectedCard(card)}
+                  sx={{
+                    bgcolor: "transparent",
+                    border: 0,
+                    position: "relative",
+                    cursor: "pointer",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      position: "relative",
+                      transition: "transform 180ms ease, box-shadow 180ms ease",
+                      "&:hover": {
+                        transform: "translateY(-6px)",
+                      },
+                    }}
+                  >
+                    <TarotCardImage
+                      imageUrl={card.image.url}
+                      alt={getLocalizedText(card.name, lang)}
+                      glowColor={suitTone.glow}
+                      maxWidth="100%"
+                    />
+                  </Box>
+                  <Box sx={{ pt: 1.1, px: 0.5, pb: 0.3 }}>
+                    <Typography
+                      variant="body2"
+                      sx={{ fontWeight: 500, lineHeight: 1.3 }}
+                    >
+                      {getLocalizedText(card.name, lang)}
+                    </Typography>
+                    <Typography
+                      variant="caption"
+                      sx={{
+                        color: suitTone.color,
+                        textTransform: "capitalize",
+                      }}
+                    >
+                      {card.arcana === "major"
+                        ? text.labels.major
+                        : (text.labels[
+                            (card.suit ?? "all") as keyof typeof text.labels
+                          ] ?? "")}
+                    </Typography>
+                  </Box>
+                </Paper>
+              </Grid>
+            );
+          })}
+        </Grid>
+
+        {/* Card Details Modal */}
+        <Dialog
+          open={!!selectedCard}
+          onClose={() => {
+            setSelectedCard(null);
+            setOrientationTab(0);
+          }}
+          maxWidth="sm"
+          fullWidth
+          slotProps={{
+            paper: {
+              sx: {
+                bgcolor: "background.default",
+                backgroundImage: "none",
+                maxHeight: "90vh",
+              },
+            },
+          }}
+        >
+          {selectedCard && (
+            <>
+              <IconButton
+                onClick={() => {
+                  setSelectedCard(null);
+                  setOrientationTab(0);
+                }}
+                sx={{
+                  position: "absolute",
+                  right: 8,
+                  top: 8,
+                  color: "text.secondary",
+                  zIndex: 1,
+                }}
+              >
+                <CloseIcon />
+              </IconButton>
+              <DialogContent sx={{ p: 3 }}>
+                <Stack spacing={3}>
+                  {/* Card Image and Basic Info */}
+                  <Box>
+                    <TarotCardImage
+                      imageUrl={selectedCard.image.url}
+                      alt={getLocalizedText(selectedCard.name, lang)}
+                      isReversed={orientationTab === 1}
+                      maxWidth={220}
+                      glowColor={
+                        suitColors[
+                          selectedCard.arcana === "major"
+                            ? "major"
+                            : ((selectedCard.suit ?? "wands") as
+                                | "wands"
+                                | "cups"
+                                | "swords"
+                                | "pentacles")
+                        ].glow
+                      }
+                      sx={{ mx: "auto" }}
+                    />
+                    <Box sx={{ textAlign: "center", mt: 2 }}>
+                      <Typography variant="h5" sx={{ fontWeight: 700, mb: 1 }}>
+                        {getLocalizedText(selectedCard.name, lang)}
+                      </Typography>
+                      <Typography
+                        variant="caption"
                         sx={{
-                          position: "absolute",
-                          width: "70%",
-                          height: 64,
-                          left: "15%",
-                          bottom: 64,
-                          borderRadius: "50%",
-                          background: `radial-gradient(circle, ${suitTone.glow} 0%, transparent 72%)`,
-                          filter: "blur(8px)",
-                          pointerEvents: "none",
-                        }}
-                      />
-                      <Box
-                        sx={{
-                          position: "relative",
-                          pt: "146%",
-                          borderRadius: 2,
-                          overflow: "hidden",
-                          border: "1px solid rgba(255,255,255,0.08)",
-                          boxShadow: `0 16px 40px rgba(0,0,0,0.45), 0 0 20px ${suitTone.glow}`,
-                          transition:
-                            "transform 180ms ease, box-shadow 180ms ease",
-                          "&:hover": {
-                            transform: "translateY(-6px)",
-                            boxShadow: `0 16px 40px rgba(0,0,0,0.45), 0 0 26px ${suitTone.glow}`,
-                          },
+                          color:
+                            suitColors[
+                              selectedCard.arcana === "major"
+                                ? "major"
+                                : ((selectedCard.suit ?? "wands") as
+                                    | "wands"
+                                    | "cups"
+                                    | "swords"
+                                    | "pentacles")
+                            ].color,
+                          textTransform: "capitalize",
                         }}
                       >
-                        <Image
-                          src={card.image.url}
-                          alt={getLocalizedText(card.name, lang)}
-                          fill
-                          style={{ objectFit: "cover" }}
-                          sizes="(max-width: 600px) 50vw, (max-width: 900px) 33vw, 200px"
-                        />
-                      </Box>
-                      <Box sx={{ pt: 1.1, px: 0.5, pb: 0.3 }}>
-                        <Typography
-                          variant="body2"
-                          sx={{ fontWeight: 500, lineHeight: 1.3 }}
-                        >
-                          {getLocalizedText(card.name, lang)}
-                        </Typography>
-                        <Typography
-                          variant="caption"
-                          sx={{
-                            color: suitTone.color,
-                            textTransform: "capitalize",
-                          }}
-                        >
-                          {card.arcana === "major"
-                            ? text.labels.major
-                            : (text.labels[
-                                (card.suit ?? "all") as keyof typeof text.labels
-                              ] ?? "")}
-                        </Typography>
-                      </Box>
-                    </>
-                  );
-                })()}
-              </Paper>
-            </Grid>
-          ))}
-        </Grid>
+                        {selectedCard.arcana === "major"
+                          ? text.labels.major
+                          : (text.labels[
+                              (selectedCard.suit ??
+                                "all") as keyof typeof text.labels
+                            ] ?? "")}
+                      </Typography>
+                    </Box>
+
+                    {/* Core Keyword */}
+                    <Box sx={{ mt: 2, textAlign: "center" }}>
+                      <Typography
+                        variant="caption"
+                        color="secondary.main"
+                        sx={{
+                          textTransform: "uppercase",
+                          letterSpacing: "0.15em",
+                          fontSize: "0.7rem",
+                        }}
+                      >
+                        {text.coreKeyword}
+                      </Typography>
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          fontFamily: 'var(--font-display), "Cinzel", serif',
+                          color: "primary.light",
+                          mt: 0.5,
+                        }}
+                      >
+                        {getLocalizedText(selectedCard.coreKeyword, lang)}
+                      </Typography>
+                    </Box>
+
+                    {/* Description */}
+                    <Box sx={{ mt: 2 }}>
+                      <Typography variant="subtitle2" color="secondary.main">
+                        {text.description}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        color="text.secondary"
+                        sx={{ mt: 0.5 }}
+                      >
+                        {getLocalizedText(selectedCard.description, lang)}
+                      </Typography>
+                    </Box>
+                  </Box>
+
+                  {/* Orientation Tabs */}
+                  <Tabs
+                    value={orientationTab}
+                    onChange={(_, v) => setOrientationTab(v)}
+                    variant="fullWidth"
+                    sx={{
+                      borderBottom: 1,
+                      borderColor: "divider",
+                      "& .MuiTab-root": {
+                        fontWeight: 700,
+                      },
+                    }}
+                  >
+                    <Tab label={text.upright} />
+                    <Tab label={text.reversed} />
+                  </Tabs>
+
+                  {/* Meaning */}
+                  <Box>
+                    <Typography variant="subtitle2" color="secondary.main">
+                      {text.meaning}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      sx={{ mt: 0.5 }}
+                    >
+                      {
+                        selectedCard.meaning[
+                          orientationTab === 0 ? "upright" : "reversed"
+                        ][lang]
+                      }
+                    </Typography>
+                  </Box>
+
+                  {/* Reading Aspects */}
+                  <ReadingAspectSection
+                    readingAspects={selectedCard.readingAspects}
+                    orientation={orientationTab === 0 ? "upright" : "reversed"}
+                    language={lang}
+                  />
+
+                  {/* Contextual Meanings */}
+                  <ContextualMeaningSection
+                    contextualMeanings={selectedCard.contextualMeanings}
+                    orientation={orientationTab === 0 ? "upright" : "reversed"}
+                    language={lang}
+                  />
+                </Stack>
+              </DialogContent>
+            </>
+          )}
+        </Dialog>
       </Stack>
     </Container>
   );
