@@ -10,9 +10,6 @@ export const pentaclesCards: TarotCard[] = [
     arcana: "minor",
     suit: "pentacles",
     number: 1,
-    image: {
-      url: "/images/rider-waite/Pentacles01.png",
-    },
     description: {
       en: "The pentacle held in the hand of God symbolizes abundance. Beyond the beautiful garden spreading below lies a steep mountain range. This card represents how consistent effort can lead to prosperity and a bountiful environment.",
       zh: "擺放在一（ACE）的神之手上的是象徵「豐饒」的錢幣。下方擴展開來的美麗庭園深處可見險峻山脈。這是張表現經由努力就能抵達豐裕環境的牌。",
@@ -135,9 +132,6 @@ export const pentaclesCards: TarotCard[] = [
     arcana: "minor",
     suit: "pentacles",
     number: 2,
-    image: {
-      url: "/images/rider-waite/Pentacles02.png",
-    },
     description: {
       en: "The card depicts a juggler dancing while skillfully balancing two pentacles. It represents adaptability and flexibility-the ability to navigate any situation smoothly.",
       zh: "牌面描繪著雜耍藝人一邊跳舞，一邊靈巧地耍弄兩枚錢幣的模樣。呈現出無論面臨何種情況，都能發揮順利處理事情的適應能力與彈性。",
@@ -260,9 +254,6 @@ export const pentaclesCards: TarotCard[] = [
     arcana: "minor",
     suit: "pentacles",
     number: 3,
-    image: {
-      url: "/images/rider-waite/Pentacles03.png",
-    },
     description: {
       en: "A sculptor stands on a platform, his craft recognized as he is entrusted with important work. This card indicates that your sustained effort and developing skills are gaining recognition and bringing new opportunities.",
       zh: "臺上站著一名雕刻家，他的技術獲得認同，正被交付重要工作。這是張告訴你至今為止的努力或技術獲得評價等，機會降臨的牌。",
@@ -385,9 +376,6 @@ export const pentaclesCards: TarotCard[] = [
     arcana: "minor",
     suit: "pentacles",
     number: 4,
-    image: {
-      url: "/images/rider-waite/Pentacles04.png",
-    },
     description: {
       en: "A miser clutches pentacles tightly to his chest. The street scene behind him suggests his preoccupation with worldly wealth. This card depicts strong possessiveness and attachment to material things.",
       zh: "小心翼翼地抱著錢幣的守財奴。繪製在後方的街景彷彿意味著他拘泥於世上的金流。這是張呈現強烈占有欲與對財富執著的牌。",
@@ -510,9 +498,6 @@ export const pentaclesCards: TarotCard[] = [
     arcana: "minor",
     suit: "pentacles",
     number: 5,
-    image: {
-      url: "/images/rider-waite/Pentacles05.png",
-    },
     description: {
       en: "Two figures pass before a church, yet out of pride, neither seeks help there. This card represents the harshness and trials of survival.",
       zh: "兩個人正要通過教堂前方，出於自尊心而不打算在教堂行乞。可說是呈現生存嚴酷的一張牌。",
@@ -635,9 +620,6 @@ export const pentaclesCards: TarotCard[] = [
     arcana: "minor",
     suit: "pentacles",
     number: 6,
-    image: {
-      url: "/images/rider-waite/Pentacles06.png",
-    },
     description: {
       en: "This card depicts a person in power holding scales in one hand and bestowing gifts on others. It represents a relationship where both the giver and receiver are filled with goodwill and kindness.",
       zh: "這張牌描繪著一隻手拿著天秤的掌權者，正賦予人們某些事物的模樣。這是張呈現掌權者內心充滿善意，人們相互接受善意的關係。",
@@ -760,9 +742,6 @@ export const pentaclesCards: TarotCard[] = [
     arcana: "minor",
     suit: "pentacles",
     number: 7,
-    image: {
-      url: "/images/rider-waite/Pentacles07.png",
-    },
     description: {
       en: "A man looks worriedly at the harvested pentacle fruit. Despite considerable effort, the results are disappointing. This card suggests an obstacle that must be overcome to achieve growth.",
       zh: "一名男子正愁容滿面地凝視著收成的錢幣果實。看似是費了一番苦心，卻無法獲得令人滿意的成果。這張牌暗示著為了成長需跨越的高牆。",
@@ -885,9 +864,6 @@ export const pentaclesCards: TarotCard[] = [
     arcana: "minor",
     suit: "pentacles",
     number: 8,
-    image: {
-      url: "/images/rider-waite/Pentacles08.png",
-    },
     description: {
       en: "A focused craftsman silently creates pentacles. The town behind him represents the day when his work will be recognized. This card shows the accumulation of dedicated effort.",
       zh: "看似認真的工匠默默地製造著錢幣，他身後的城鎮意味著他的工作獲得人們認同的日子到來。這是張顯示努力累積的牌。",
@@ -1010,9 +986,6 @@ export const pentaclesCards: TarotCard[] = [
     arcana: "minor",
     suit: "pentacles",
     number: 9,
-    image: {
-      url: "/images/rider-waite/Pentacles09.png",
-    },
     description: {
       en: "An elegant woman has tamed the falcon of wisdom, and the castle-like structure behind her symbolizes her elevated status. It represents achieving success through charm or talent.",
       zh: "馴服了象徵智慧的遊隼的優雅女子，其身後城堡般的建築物，彷彿證明了她的身分之高。意味著藉由魅力或才華贏得成功。",
@@ -1135,9 +1108,6 @@ export const pentaclesCards: TarotCard[] = [
     arcana: "minor",
     suit: "pentacles",
     number: 10,
-    image: {
-      url: "/images/rider-waite/Pentacles10.png",
-    },
     description: {
       en: "The card depicts a family living in wealth. The man in the center holds a magical wand-perhaps power inherited from the elderly man on the left. This card expresses inheritance and lasting prosperity.",
       zh: "牌面上描繪過著富裕生活的家庭。中央的男人手持魔法權杖，是從左方的老人手中繼承的力量嗎？這可說是張表現繼承或繁榮的牌。",
@@ -1260,9 +1230,6 @@ export const pentaclesCards: TarotCard[] = [
     arcana: "minor",
     suit: "pentacles",
     number: 11,
-    image: {
-      url: "/images/rider-waite/Pentacles11.png",
-    },
     description: {
       en: "The young man gazes intently at the pentacle held in both hands, appearing dedicated to study and hard work. There is no need to hurry; by cultivating various skills, a bright future awaits.",
       zh: "少年目不轉睛地凝視著雙手捧起的錢幣，看起來非常熱衷於研究且勤奮。不用著急，只要學習各式各樣的技能，將來就很有可能盛大地開花結果。",
@@ -1385,9 +1352,6 @@ export const pentaclesCards: TarotCard[] = [
     arcana: "minor",
     suit: "pentacles",
     number: 12,
-    image: {
-      url: "/images/rider-waite/Pentacles12.png",
-    },
     description: {
       en: "The Knight of Pentacles sits upon a black horse in armor, gazing into the distance as if envisioning a successful future. This card expresses steadfast dedication and hard work.",
       zh: "跨坐在黑馬上，身披鎧甲的〈錢幣騎士〉。他眺望遠方的模樣，就像在想像著成功的未來。可說是張表現出勤勉努力的牌。",
@@ -1510,9 +1474,6 @@ export const pentaclesCards: TarotCard[] = [
     arcana: "minor",
     suit: "pentacles",
     number: 13,
-    image: {
-      url: "/images/rider-waite/Pentacles13.png",
-    },
     description: {
       en: "The Queen gazes calmly at the pentacle. The rabbit at her feet symbolizes abundance. This card depicts a nurturing, maternal heart that embraces all, bringing wealth and good fortune.",
       zh: "用平靜表情凝視著錢幣的王后。腳邊（右下）的兔子是豐饒的象徵。這張牌為我們描繪出如母親般接受一切的慈愛胸懷，送來了財富與幸運。",
@@ -1635,9 +1596,6 @@ export const pentaclesCards: TarotCard[] = [
     arcana: "minor",
     suit: "pentacles",
     number: 14,
-    image: {
-      url: "/images/rider-waite/Pentacles14.png",
-    },
     description: {
       en: "The king sits serenely on his throne, pentacle in hand. The plants surrounding him symbolize the wealth in his possession. As a king, how to use his resources for the benefit of others is the essential question.",
       zh: "神情沉穩地手握錢幣，端坐在王座上的國王。周遭的植物是手中財富的象徵。身為國王，如何為了眾人運用手中的事物是一道課題。",

@@ -32,9 +32,6 @@ export interface TarotCard {
   arcana: ArcanaType;
   suit: MinorArcanaSuit | null;
   number: number;
-  image: {
-    url: string;
-  };
   description: LocalizedText;
   coreKeyword: LocalizedText;
   meaning: TarotCardMeaning;

@@ -10,9 +10,6 @@ export const cupsCards: TarotCard[] = [
     arcana: "minor",
     suit: "cups",
     number: 1,
-    image: {
-      url: "/images/rider-waite/Cups01.png",
-    },
     description: {
       en: "The Ace of Cups depicts the hand of God offering a cup brimming with water. The flowing water symbolizes love, emotion, and spiritual blessing. This card represents the beginning of profound emotional fulfillment and spiritual abundance.",
       zh: "聖杯一（ACE）描繪著神之手捧著注滿水的聖杯。滿溢而出的水象徵愛、情感與心靈的祝福。這是張呈現豐富情感與精神滿足開端的牌。",
@@ -135,9 +132,6 @@ export const cupsCards: TarotCard[] = [
     arcana: "minor",
     suit: "cups",
     number: 2,
-    image: {
-      url: "/images/rider-waite/Cups02.png",
-    },
     description: {
       en: "A man and woman exchange cups and gaze at each other sincerely. Above them appears a symbol of blessing, suggesting emotional alignment and a bond formed through mutual acceptance.",
       zh: "一男一女互相交換聖杯，真誠地面對彼此。上方出現祝福的象徵，暗示情感上的契合，以及透過互相接納而締結的羈絆。",
@@ -260,9 +254,6 @@ export const cupsCards: TarotCard[] = [
     arcana: "minor",
     suit: "cups",
     number: 3,
-    image: {
-      url: "/images/rider-waite/Cups03.png",
-    },
     description: {
       en: "Three women raise their cups together in celebration. Fruits and flowers surround them, depicting joy shared with companions and the happiness of belonging to a community.",
       zh: "三名女性一同舉杯慶祝。周圍環繞著果實與花朵，呈現與夥伴共享喜悅，以及歸屬於群體中的幸福感。",
@@ -385,9 +376,6 @@ export const cupsCards: TarotCard[] = [
     arcana: "minor",
     suit: "cups",
     number: 4,
-    image: {
-      url: "/images/rider-waite/Cups04.png",
-    },
     description: {
       en: "A person sits beneath a tree with folded arms, ignoring the cup offered by a mysterious hand. Three cups stand before them, yet their heart remains unmoved. This card depicts emotional stagnation and dissatisfaction.",
       zh: "一個人雙手環抱坐在樹下，沒有注意到神祕之手遞出的聖杯。眼前雖有三只聖杯，內心卻毫無動搖。這張牌呈現情感停滯與不滿足。",
@@ -510,9 +498,6 @@ export const cupsCards: TarotCard[] = [
     arcana: "minor",
     suit: "cups",
     number: 5,
-    image: {
-      url: "/images/rider-waite/Cups05.png",
-    },
     description: {
       en: "A person in a black cloak gazes downward at spilled cups, while two cups still stand upright behind. The card shows grief from loss, yet reminds that not everything has been lost.",
       zh: "身披黑色斗篷的人低頭凝視倒下的聖杯，而身後仍有兩只聖杯尚未倒下。這張牌呈現失落與悲傷，也提醒並非一切都已失去。",
@@ -635,9 +620,6 @@ export const cupsCards: TarotCard[] = [
     arcana: "minor",
     suit: "cups",
     number: 6,
-    image: {
-      url: "/images/rider-waite/Cups06.png",
-    },
     description: {
       en: "Children exchange cups filled with flowers in a peaceful town. The card evokes nostalgia, innocence, cherished memories, and the warmth of the past.",
       zh: "孩子們在平和的城鎮中交換裝滿花朵的聖杯。這張牌呈現懷舊、純真、回憶，以及來自過去的溫暖。",
@@ -760,9 +742,6 @@ export const cupsCards: TarotCard[] = [
     arcana: "minor",
     suit: "cups",
     number: 7,
-    image: {
-      url: "/images/rider-waite/Cups07.png",
-    },
     description: {
       en: "Seven cups float in the clouds, each holding a different vision. The figure gazes at them in confusion, suggesting many desires, illusions, and choices that have not yet taken shape in reality.",
       zh: "七只聖杯漂浮在雲霧中，每一只都裝著不同的幻象。人物困惑地凝視著它們，暗示許多欲望、幻想與尚未成真的選擇。",
@@ -885,9 +864,6 @@ export const cupsCards: TarotCard[] = [
     arcana: "minor",
     suit: "cups",
     number: 8,
-    image: {
-      url: "/images/rider-waite/Cups08.png",
-    },
     description: {
       en: "A person leaves behind eight cups and walks toward the mountains under the moon. Although much has already been built, the heart still seeks something more meaningful.",
       zh: "一個人在月光下留下八只聖杯，朝山的方向離去。雖然已經建立起某些事物，但內心仍追尋更深層的意義。",
@@ -1010,9 +986,6 @@ export const cupsCards: TarotCard[] = [
     arcana: "minor",
     suit: "cups",
     number: 9,
-    image: {
-      url: "/images/rider-waite/Cups09.png",
-    },
     description: {
       en: "A satisfied person sits before nine arranged cups. Their posture conveys confidence, contentment, and the fulfillment of personal wishes.",
       zh: "一位感到滿足的人坐在排列整齊的九只聖杯前。他的姿態呈現自信、享受，以及個人願望獲得滿足的狀態。",
@@ -1135,9 +1108,6 @@ export const cupsCards: TarotCard[] = [
     arcana: "minor",
     suit: "cups",
     number: 10,
-    image: {
-      url: "/images/rider-waite/Cups10.png",
-    },
     description: {
       en: "A family raises their arms beneath a rainbow of ten cups. The card depicts emotional completeness, family happiness, and the joy of sharing blessings with loved ones.",
       zh: "一家人在十只聖杯形成的彩虹下舉起雙手。這張牌呈現情感上的圓滿、家庭幸福，以及與所愛之人共享祝福的喜悅。",
@@ -1260,9 +1230,6 @@ export const cupsCards: TarotCard[] = [
     arcana: "minor",
     suit: "cups",
     number: 11,
-    image: {
-      url: "/images/rider-waite/Cups11.png",
-    },
     description: {
       en: "A young page holds a cup from which a fish appears. The image suggests innocent imagination, emotional messages, and a heart open to wonder.",
       zh: "年輕侍者手捧聖杯，而魚從杯中探出頭來。這個畫面暗示純真的想像力、情感訊息，以及對奇妙事物敞開的心。",
@@ -1385,9 +1352,6 @@ export const cupsCards: TarotCard[] = [
     arcana: "minor",
     suit: "cups",
     number: 12,
-    image: {
-      url: "/images/rider-waite/Cups12.png",
-    },
     description: {
       en: "A knight rides calmly with a cup in hand, as if delivering an emotional invitation. This card shows romance, ideals, and movement guided by the heart.",
       zh: "騎士手持聖杯，平靜地騎馬前行，像是帶著情感上的邀請。這張牌呈現浪漫、理想，以及由內心引導的行動。",
@@ -1510,9 +1474,6 @@ export const cupsCards: TarotCard[] = [
     arcana: "minor",
     suit: "cups",
     number: 13,
-    image: {
-      url: "/images/rider-waite/Cups13.png",
-    },
     description: {
       en: "The Queen gazes quietly at a richly decorated cup. She seems to look into the depths of the heart, symbolizing deep empathy, intuition, and emotional receptivity.",
       zh: "王后靜靜凝視著裝飾華麗的聖杯。她像是在注視心靈深處，象徵深厚的共感力、直覺與接納情感的能力。",
@@ -1635,9 +1596,6 @@ export const cupsCards: TarotCard[] = [
     arcana: "minor",
     suit: "cups",
     number: 14,
-    image: {
-      url: "/images/rider-waite/Cups14.png",
-    },
     description: {
       en: "The King sits calmly on a throne floating above the sea, holding a cup and scepter. Although surrounded by waves, he remains composed, showing emotional maturity and mastery.",
       zh: "國王坐在漂浮於海上的王座，手持聖杯與權杖。即使被波浪包圍，仍保持沉著，呈現成熟與掌握情感的力量。",

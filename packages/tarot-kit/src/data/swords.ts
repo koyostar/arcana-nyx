@@ -10,9 +10,6 @@ export const swordsCards: TarotCard[] = [
     arcana: "minor",
     suit: "swords",
     number: 1,
-    image: {
-      url: "/images/rider-waite/Swords01.png",
-    },
     description: {
       en: "The hand of God holds a sword, and a crown symbolizing victory rests on its tip. The steep mountains in the background reveal that this is by no means an easy path. This card represents overcoming severe circumstances through strong mental power.",
       zh: "神之手握著寶劍，劍尖上有著象徵勝利的王冠。從背景的險峻山脈可得知這絕非輕鬆的道路，是張呈現以強韌精神力克服嚴苛情況的牌。",
@@ -135,9 +132,6 @@ export const swordsCards: TarotCard[] = [
     arcana: "minor",
     suit: "swords",
     number: 2,
-    image: {
-      url: "/images/rider-waite/Swords02.png",
-    },
     description: {
       en: "A woman holds two swords with both hands. Her blindfold may indicate something she does not want to face, or perhaps she wants to hide her true thoughts. The two swords suggest a state of inner conflict.",
       zh: "雙手持劍的女子，蒙住雙眼是因為有不想面對的事物，還是想要隱藏自己的真正想法呢？兩把寶劍或許暗示著左右為難的狀態。",
@@ -260,9 +254,6 @@ export const swordsCards: TarotCard[] = [
     arcana: "minor",
     suit: "swords",
     number: 3,
-    image: {
-      url: "/images/rider-waite/Swords03.png",
-    },
     description: {
       en: "A heart representing love is pierced by three swords and drenched in sorrowful rain. This card suggests a shocking event that deeply wounds the heart.",
       zh: "象徵愛或心臟的愛心被三把寶劍穿過，並淋著代表悲傷的雨。這是張暗示著發生令內心深受傷害的震驚事件的牌。",
@@ -385,9 +376,6 @@ export const swordsCards: TarotCard[] = [
     arcana: "minor",
     suit: "swords",
     number: 4,
-    image: {
-      url: "/images/rider-waite/Swords04.png",
-    },
     description: {
       en: "A knight statue lies with closed eyes, hands joined on the chest as if in prayer. This card expresses quiet rest and solitude.",
       zh: "騎士雕像閉上雙眼躺著，雙手在胸口合十，是因為在祈禱著什麼嗎？是張表現安靜休息或獨處時間的牌。",
@@ -510,9 +498,6 @@ export const swordsCards: TarotCard[] = [
     arcana: "minor",
     suit: "swords",
     number: 5,
-    image: {
-      url: "/images/rider-waite/Swords05.png",
-    },
     description: {
       en: "A man holding swords looks at two defeated people. A dispute seems to have taken place, and his grinning posture with the ominous clouds presents a hollow victory.",
       zh: "一名立起寶劍的男人望著戰敗的其他兩人。這裡剛才似乎發生過某些爭執，咧嘴而笑的男人姿態與險惡的雲形呈現出「空虛的勝利」。",
@@ -635,9 +620,6 @@ export const swordsCards: TarotCard[] = [
     arcana: "minor",
     suit: "swords",
     number: 6,
-    image: {
-      url: "/images/rider-waite/Swords06.png",
-    },
     description: {
       en: "A man rows a boat while a mother and child sit in front of him. Perhaps they lower their heads and hide their faces because they have abandoned everything and fled. The card shows drifting with the current toward a new place.",
       zh: "男人划著船，前方坐著一對母子。會低著頭隱藏臉部，是因為捨棄了一切逃離嗎？牌面表現出的是隨波逐流，前往新天地的情景。",
@@ -760,9 +742,6 @@ export const swordsCards: TarotCard[] = [
     arcana: "minor",
     suit: "swords",
     number: 7,
-    image: {
-      url: "/images/rider-waite/Swords07.png",
-    },
     description: {
       en: "The card depicts a man looking back while carrying swords and trying to flee. There are figures in the distance, but they do not seem to have noticed him yet. This card suggests illegality or injustice.",
       zh: "牌面上描繪著一個一邊回過頭，一邊帶著寶劍試圖逃跑的男人。遠方雖然有人影，但似乎尚未察覺。這是張暗示著「不法」或「不義」的牌。",
@@ -885,9 +864,6 @@ export const swordsCards: TarotCard[] = [
     arcana: "minor",
     suit: "swords",
     number: 8,
-    image: {
-      url: "/images/rider-waite/Swords08.png",
-    },
     description: {
       en: "A blindfolded and bound woman is surrounded by swords. Looking closely, there are no guards, and her feet can move. This card suggests that what is bound is not the body, but the heart.",
       zh: "眼睛被蒙住、身體被綁起來的女子被寶劍包圍著。但仔細一看，周遭並沒有守衛，腳也是可以活動的。這張牌暗示著被束縛的並非身體，而是內心。",
@@ -1010,9 +986,6 @@ export const swordsCards: TarotCard[] = [
     arcana: "minor",
     suit: "swords",
     number: 9,
-    image: {
-      url: "/images/rider-waite/Swords09.png",
-    },
     description: {
       en: "A woman sits on a bed sighing. Perhaps she had a nightmare, or cried all night out of despair. This card presents sorrow, anxiety, and guilt, while also suggesting awakening from this state.",
       zh: "女子坐在床上嘆息。不知道是作了惡夢，還是出於絕望而徹夜哭泣呢……這是張呈現悲傷、不安、罪惡感的牌。不過同時也暗示了從此處甦醒的意思。",
@@ -1135,9 +1108,6 @@ export const swordsCards: TarotCard[] = [
     arcana: "minor",
     suit: "swords",
     number: 10,
-    image: {
-      url: "/images/rider-waite/Swords10.png",
-    },
     description: {
       en: "A man lies with ten swords piercing his body. The image seems ominous at first glance, but if you look closely, the dark sky is about to clear. This card shows gaining a bright future by accepting reality.",
       zh: "身體被十把寶劍插著的男人。圖案乍看之下不祥，但仔細一看，可見陰暗的天空正要放晴。這張牌表現的是藉由接受現實，而獲得光明的未來。",
@@ -1260,9 +1230,6 @@ export const swordsCards: TarotCard[] = [
     arcana: "minor",
     suit: "swords",
     number: 11,
-    image: {
-      url: "/images/rider-waite/Swords11.png",
-    },
     description: {
       en: "A youth holds a sword and looks back with a sharp gaze. The flock of birds flying overhead expresses his high mental power. This card shows the caution and analytical ability needed to respond even to an explosive situation.",
       zh: "青年手持寶劍，以銳利的視線回望身後。從頭頂上方飛過的鳥群表現出他的精神力之高。這是張顯示出連一觸即發的狀況也能應對的謹慎與分析能力的牌。",
@@ -1385,9 +1352,6 @@ export const swordsCards: TarotCard[] = [
     arcana: "minor",
     suit: "swords",
     number: 12,
-    image: {
-      url: "/images/rider-waite/Swords12.png",
-    },
     description: {
       en: "The knight rides a white horse, his gaze fixed straight ahead. The sword he raises is an expression of his will and confidence. It symbolizes charging forward without hesitation, with inner strength and courage.",
       zh: "騎著白馬馳騁的騎士，視線筆直地朝著前方。高舉的寶劍是他意志與自信的展現。是象徵毫不迷惘地向前衝，內心強悍與勇敢的一張牌。",
@@ -1510,9 +1474,6 @@ export const swordsCards: TarotCard[] = [
     arcana: "minor",
     suit: "swords",
     number: 13,
-    image: {
-      url: "/images/rider-waite/Swords13.png",
-    },
     description: {
       en: "The Queen sits on her throne, staring ahead without blinking. The sword in her right hand points toward the sky, while her left hand seems ready to accept all faults. This card has both strictness and gentleness.",
       zh: "坐在王座上，目不轉睛地看著前方的王后。右手握著的寶劍指向天空，左手則打算接受所有過錯。可說是一張同時擁有嚴厲與溫柔兩種面向的牌。",
@@ -1635,9 +1596,6 @@ export const swordsCards: TarotCard[] = [
     arcana: "minor",
     suit: "swords",
     number: 14,
-    image: {
-      url: "/images/rider-waite/Swords14.png",
-    },
     description: {
       en: "The King faces forward with a severe expression. From his many battles up to now, he believes himself to be correct. The sword in his hand expresses a strict attitude that does not allow pleading or perfunctory treatment.",
       zh: "以嚴肅表情面對正前方的國王，從至今為止身經百戰的歷練中，相信自己是正確的。手中的寶劍表現出絕不容許求情或敷衍了事的嚴厲態度。",

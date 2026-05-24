@@ -10,9 +10,6 @@ export const majorArcana: TarotCard[] = [
     arcana: "major",
     suit: null,
     number: 0,
-    image: {
-      url: "/images/rider-waite/00-TheFool.png",
-    },
     description: {
       en: "A traveler walks leisurely with only the clothes on his back and a light bundle. He holds a white rose, celebrating freedom, yet does not notice that there is no road ahead. This card represents freedom and the unknown state of not knowing what comes next.",
       zh: "只有身上這套裝束，捎著輕鬆的行囊悠閒漫步的旅行者。他一手拿著白玫瑰，盡情謳歌著自由。不過在他腳邊，前方並沒有道路可走。〈愚者〉的牌呈現的是自由，以及不知道下一步會怎麼樣的未知狀態。",
@@ -135,9 +132,6 @@ export const majorArcana: TarotCard[] = [
     arcana: "major",
     suit: null,
     number: 1,
-    image: {
-      url: "/images/rider-waite/01-TheMagician.png",
-    },
     description: {
       en: "A young man confidently raises a wand, ready to demonstrate his skill. On the table before him are the four elements: wand, pentacle, sword, and cup. This card announces that everything is prepared, and the time to act has arrived.",
       zh: "男性意氣風發地高舉著魔杖，表情充滿自信，正準備大展身手。在前方桌上同時排著構成宇宙的四大要素——權杖、錢幣、寶劍與聖杯。這也是告知你萬事已經準備完成，展開行動的時刻終於到來的牌。",
@@ -260,9 +254,6 @@ export const majorArcana: TarotCard[] = [
     arcana: "major",
     suit: null,
     number: 2,
-    image: {
-      url: "/images/rider-waite/02-TheHighPriestess.png",
-    },
     description: {
       en: "A mysterious woman crowned with the earth mother's crown sits between black and white pillars, holding the Torah. Her pure and noble bearing radiates wisdom, reason, and spiritual calm.",
       zh: "頭戴大地母神之冠的神祕女性坐在黑白雙柱之間，手持聖典。她散發純潔無瑕的高貴氣息，呈現智慧、理性與緊張感。",
@@ -385,9 +376,6 @@ export const majorArcana: TarotCard[] = [
     arcana: "major",
     suit: null,
     number: 3,
-    image: {
-      url: "/images/rider-waite/03-TheEmpress.png",
-    },
     description: {
       en: "The Empress sits comfortably in abundant nature. Her full figure suggests pregnancy, growth, unconditional love, and the endless cycle of life.",
       zh: "女皇舒適地端坐在豐饒結實的大自然中，豐腴的身材令人聯想到懷孕。這張牌象徵源源不絕的生命循環、愛、美與豐饒。",
@@ -510,9 +498,6 @@ export const majorArcana: TarotCard[] = [
     arcana: "major",
     suit: null,
     number: 4,
-    image: {
-      url: "/images/rider-waite/04-TheEmperor.png",
-    },
     description: {
       en: "The Emperor sits upon his throne in armor, ruling as a sovereign. He represents ambition, leadership, responsibility, and the power to stabilize a group.",
       zh: "身披鎧甲、堂堂端坐於王座上的男性是一國之君。這張牌呈現野心、統率力、責任感，以及穩定社會團體的力量。",
@@ -635,9 +620,6 @@ export const majorArcana: TarotCard[] = [
     arcana: "major",
     suit: null,
     number: 5,
-    image: {
-      url: "/images/rider-waite/05-TheHierophant.png",
-    },
     description: {
       en: "The Hierophant holds a triple cross and blesses two priests. He teaches morality, tradition, and the way to live, becoming a spiritual guide and trusted symbol.",
       zh: "教皇手持三重十字架，祝福兩名神父。他教導道德與生存之道，是精神上的榜樣，也是眾人信任與尊敬的存在。",
@@ -760,9 +742,6 @@ export const majorArcana: TarotCard[] = [
     arcana: "major",
     suit: null,
     number: 6,
-    image: {
-      url: "/images/rider-waite/06-TheLovers.png",
-    },
     description: {
       en: "A man and woman in Eden are blessed by an angel. Their nakedness shows fearlessness, attraction, joy, and complete satisfaction.",
       zh: "伊甸園中的男女受到天使祝福，赤身裸體而毫無畏懼。這張牌展現一切獲得滿足、極為幸福愜意的狀態。",
@@ -885,9 +864,6 @@ export const majorArcana: TarotCard[] = [
     arcana: "major",
     suit: null,
     number: 7,
-    image: {
-      url: "/images/rider-waite/07-TheChariot.png",
-    },
     description: {
       en: "A warrior rides a chariot drawn by black and white sphinxes. Controlling them requires strong will, power, and unwavering action toward the goal.",
       zh: "戰士搭乘戰車，定睛看著應前進的道路。黑白斯芬克斯象徵不同衝動，必須以堅強意志與力量控制，毫不猶豫地前進。",
@@ -1010,9 +986,6 @@ export const majorArcana: TarotCard[] = [
     arcana: "major",
     suit: null,
     number: 8,
-    image: {
-      url: "/images/rider-waite/08-Strength.png",
-    },
     description: {
       en: "A gentle woman softly touches the jaw of a fierce lion. This card represents not physical force, but the inner strength of love, patience, and mutual understanding.",
       zh: "纖細的女子伸手撫摸凶猛獅子的下頜。這張牌所意味的力量不是臂力或權力，而是愛、耐心與心靈相通的內在力量。",
@@ -1135,9 +1108,6 @@ export const majorArcana: TarotCard[] = [
     arcana: "major",
     suit: null,
     number: 9,
-    image: {
-      url: "/images/rider-waite/09-TheHermit.png",
-    },
     description: {
       en: "An old man in a grey robe stands alone with a lantern. He withdraws from the world to face his inner truth and seek wisdom from past experience.",
       zh: "老人身披灰色長袍，獨自佇立，手中提燈閃耀六芒星光芒。他遠離塵世，面對內心世界，從過去經驗中探求真理。",
@@ -1260,9 +1230,6 @@ export const majorArcana: TarotCard[] = [
     arcana: "major",
     suit: null,
     number: 10,
-    image: {
-      url: "/images/rider-waite/10-WheelOfFortune.png",
-    },
     description: {
       en: "The giant wheel turns slowly, surrounded by symbolic beings. All life exists within an inescapable current where one may rise or fall.",
       zh: "緩緩轉動的巨大車輪代表命運。所有生命都身處無法逃脫的洪流之中，可能上浮，也可能下沉。",
@@ -1385,9 +1352,6 @@ export const majorArcana: TarotCard[] = [
     arcana: "major",
     suit: null,
     number: 11,
-    image: {
-      url: "/images/rider-waite/11-Justice.png",
-    },
     description: {
       en: "A calm judge sits with scales and sword, objectively weighing cause and effect. This card shows fairness, judgment, and balance without emotional interference.",
       zh: "英氣凜然的中性女子端坐中央，以天秤衡量罪行輕重，並以劍制裁。這張牌暗示不受情感操弄，客觀公正地判斷。",
@@ -1510,9 +1474,6 @@ export const majorArcana: TarotCard[] = [
     arcana: "major",
     suit: null,
     number: 12,
-    image: {
-      url: "/images/rider-waite/12-TheHangedMan.png",
-    },
     description: {
       en: "A man hangs upside down from a tree, yet his expression is peaceful and his head glows. Because his body cannot move, his thoughts become clearer.",
       zh: "男性雙手被反綁，單腳吊掛在樹上，但表情平靜，頭後散發光芒。正因手腳無法動彈，思考反而更加通透。",
@@ -1635,9 +1596,6 @@ export const majorArcana: TarotCard[] = [
     arcana: "major",
     suit: null,
     number: 13,
-    image: {
-      url: "/images/rider-waite/13-Death.png",
-    },
     description: {
       en: "Death rides a white horse across the battlefield as the sun rises in the distance. This represents not only an end, but also rebirth and movement to a new stage.",
       zh: "死神騎乘白馬靜靜前進，遠方太陽緩緩升起。這張牌呈現終結與起始，暗示精神、人際關係或環境的煥然一新。",
@@ -1760,9 +1718,6 @@ export const majorArcana: TarotCard[] = [
     arcana: "major",
     suit: null,
     number: 14,
-    image: {
-      url: "/images/rider-waite/14-Temperance.png",
-    },
     description: {
       en: "An angel skillfully pours water between two cups, as if suggesting communication. This card emphasizes mixing, adjustment, and the new results born from different elements meeting.",
       zh: "天使靈巧地操控兩個杯子裡的水，像是在暗示溝通。這張牌強調混合、調整，以及不同事物接觸後產生的新反應。",
@@ -1885,9 +1840,6 @@ export const majorArcana: TarotCard[] = [
     arcana: "major",
     suit: null,
     number: 15,
-    image: {
-      url: "/images/rider-waite/15-TheDevil.png",
-    },
     description: {
       en: "A naked man and woman are chained before the Devil, yet the chains are loose. The card shows the mind captured by desire and pleasure rather than the body.",
       zh: "赤身裸體的男女被惡魔擄獲，但鎖鏈綁得很鬆。這張牌顯示被擄獲的並非身體，而是耽溺並墮落於享樂中的心靈。",
@@ -2010,9 +1962,6 @@ export const majorArcana: TarotCard[] = [
     arcana: "major",
     suit: null,
     number: 16,
-    image: {
-      url: "/images/rider-waite/16-TheTower.png",
-    },
     description: {
       en: "Lightning strikes the tower and the crown falls. The scene depicts shocking transformation, unforeseen accident, and destruction that clears the way for something new.",
       zh: "高塔因驚人的雷電而崩塌，王冠掉落。這張牌意味衝擊性的變化、預期外的意外，以及破壞後的新生。",
@@ -2135,9 +2084,6 @@ export const majorArcana: TarotCard[] = [
     arcana: "major",
     suit: null,
     number: 17,
-    image: {
-      url: "/images/rider-waite/17-TheStar.png",
-    },
     description: {
       en: "A naked woman pours water under shining stars. The bright star has long guided travelers and represents ideals, hope, purity, and emerging talent.",
       zh: "赤裸少女在閃耀星光下倒水。天際的星星自古指引旅人，也暗示今後將開花結果的才華、理想與希望。",
@@ -2260,9 +2206,6 @@ export const majorArcana: TarotCard[] = [
     arcana: "major",
     suit: null,
     number: 18,
-    image: {
-      url: "/images/rider-waite/18-TheMoon.png",
-    },
     description: {
       en: "The sorrowful Moon shines over a dim landscape where visibility is poor. Dogs, a wolf, and a crayfish suggest anxiety rising from the unconscious.",
       zh: "面帶愁容的月亮高掛天際，月光下的一切朦朧不清。狗、狼與螯蝦呈現潛意識中的不安逐漸浮上檯面。",
@@ -2385,9 +2328,6 @@ export const majorArcana: TarotCard[] = [
     arcana: "major",
     suit: null,
     number: 19,
-    image: {
-      url: "/images/rider-waite/19-TheSun.png",
-    },
     description: {
       en: "The Sun shines in a clear sky over a naked child on a horse. This card represents the joy of being alive, vitality, growth, and future success.",
       zh: "晴空萬里的太陽散發光明，赤裸孩童騎在馬上。這張牌呈現活著的喜悅、生命力、成長與成功。",
@@ -2510,9 +2450,6 @@ export const majorArcana: TarotCard[] = [
     arcana: "major",
     suit: null,
     number: 20,
-    image: {
-      url: "/images/rider-waite/20-Judgement.png",
-    },
     description: {
       en: "An angel blows a trumpet and the dead rise from their coffins. What was thought finished comes back to life, bringing a decisive opportunity.",
       zh: "天使吹響號角，下方死者接二連三從棺材裡復活。原本以為已結束的事物生意盎然地復甦，暗示重要機會。",
@@ -2635,9 +2572,6 @@ export const majorArcana: TarotCard[] = [
     arcana: "major",
     suit: null,
     number: 21,
-    image: {
-      url: "/images/rider-waite/21-TheWorld.png",
-    },
     description: {
       en: "A dancer within a wreath holds wands and is surrounded by the four elemental beings. This card shows a completed world after a long journey.",
       zh: "花環中央的舞者手持權杖，四角有對應四大元素的聖獸。這張牌顯示一切獲得滿足，象徵歷經漫長時光後的完成。",

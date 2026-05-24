@@ -10,9 +10,6 @@ export const wandsCards: TarotCard[] = [
     arcana: "minor",
     suit: "wands",
     number: 1,
-    image: {
-      url: "/images/rider-waite/Wands01.png",
-    },
     description: {
       en: "The Ace of Wands shows the hand of God holding a wand, the symbol of life force. The castle-like structure in the background represents your aspirational goal. This card conveys fierce passion and the drive to seize what you desire.",
       zh: "權杖一（ACE）為神之手握住生命力的象徵——權杖。背後看似城堡的建築物象徵著想達成的目標。是張呈現欲獲得想望事物的強烈熱情的牌。",
@@ -135,9 +132,6 @@ export const wandsCards: TarotCard[] = [
     arcana: "minor",
     suit: "wands",
     number: 2,
-    image: {
-      url: "/images/rider-waite/Wands02.png",
-    },
     description: {
       en: "The figure stands atop a castle, holding a small globe with the bearing of one who has succeeded. Although glory has already been achieved, dissatisfaction lingers and new ambitions emerge. This card shows the will to reach even higher.",
       zh: "在城堡頂端佇立，手握小小地球的成功者姿態。儘管已經獲得榮耀，仍對結果感到不滿足，懷抱新的野心。這是張顯示意志進一步躍進的牌。",
@@ -260,9 +254,6 @@ export const wandsCards: TarotCard[] = [
     arcana: "minor",
     suit: "wands",
     number: 3,
-    image: {
-      url: "/images/rider-waite/Wands03.png",
-    },
     description: {
       en: "A man on a cliff gazes out over the sea. Is he watching ships depart, or waiting for them to return? This card shows the state of contemplating your current situation and where to go next.",
       zh: "懸崖上的男子正眺望著大海，究竟是在守望船隻出航，還是在等待它們歸來呢？這張牌呈現的情景是正思索著自己的現況或接下來該前往的地方。",
@@ -385,9 +376,6 @@ export const wandsCards: TarotCard[] = [
     arcana: "minor",
     suit: "wands",
     number: 4,
-    image: {
-      url: "/images/rider-waite/Wands04.png",
-    },
     description: {
       en: "People can be seen waving bouquets beyond the wands. Everyone lives in a relaxed and peaceful manner, and the castle behind them is a symbol of abundance. This card conveys stable happiness and joy.",
       zh: "可以看見在權杖的另一側揮舞著花束的人影，每個人都放鬆而平穩地生活著，而在人們身後的城堡則是豐饒的象徵。這是張傳達穩定幸福與喜悅的牌。",
@@ -510,9 +498,6 @@ export const wandsCards: TarotCard[] = [
     arcana: "minor",
     suit: "wands",
     number: 5,
-    image: {
-      url: "/images/rider-waite/Wands05.png",
-    },
     description: {
       en: "Under a blue sky, five people proudly engage in battle. The bright colors of the card show that this conflict carries no negative emotion. This card speaks of competitive spirit, determination, and the drive to test yourself through victory or defeat.",
       zh: "藍天之下，五個人得意洋洋地展開戰鬥。牌面明亮的配色顯示出這場戰鬥並不帶有負面情感。是張呈現對於鬥志與勝負的堅持的牌。",
@@ -635,9 +620,6 @@ export const wandsCards: TarotCard[] = [
     arcana: "minor",
     suit: "wands",
     number: 6,
-    image: {
-      url: "/images/rider-waite/Wands06.png",
-    },
     description: {
       en: "The card shows a man holding the wand of victory, seated on a horse and moving forward slowly. From the fact that he leads an army, we can tell he must be an excellent commander. This card presents grasping glory and gaining happiness.",
       zh: "牌面上描繪著手握勝利的權杖，坐在馬匹上緩步前進的男人。從率領軍隊這點可以得知他一定是個優秀的將領。這張牌呈現出的是掌握榮耀，獲得幸福感。",
@@ -760,9 +742,6 @@ export const wandsCards: TarotCard[] = [
     arcana: "minor",
     suit: "wands",
     number: 7,
-    image: {
-      url: "/images/rider-waite/Wands07.png",
-    },
     description: {
       en: "The card depicts a man fighting alone. From the number of wands stabbing upward, there are many enemies, but he has taken the advantageous position on the cliff. This card shows standing in an overwhelming advantage without wavering.",
       zh: "牌面描繪的是男人孤軍奮戰的模樣。從往上戳的權杖數量可判斷敵方人數眾多，但他占得了懸崖上的有利位置。這張牌顯示的是立於壓倒性的優勢而毫不動搖。",
@@ -885,9 +864,6 @@ export const wandsCards: TarotCard[] = [
     arcana: "minor",
     suit: "wands",
     number: 8,
-    image: {
-      url: "/images/rider-waite/Wands08.png",
-    },
     description: {
       en: "The eight wands move forward like arrows, symbolizing powerful force and speed. Their tips all face the same direction, suggesting that will and action are aligned and moving forward without hesitation.",
       zh: "八支權杖如箭矢般前進的模樣，象徵著強大的力量與速度。此外，權杖前端朝著同一個方向前進，暗示著意志與行動一致，毫不猶豫地前進的姿態。",
@@ -1010,9 +986,6 @@ export const wandsCards: TarotCard[] = [
     arcana: "minor",
     suit: "wands",
     number: 9,
-    image: {
-      url: "/images/rider-waite/Wands09.png",
-    },
     description: {
       en: "The card shows a cautious man standing guard. Though wounded, he still prepares to fight, revealing an indomitable spirit that refuses to give in. This card asks what you are truly fighting for.",
       zh: "牌面上繪製著小心謹慎地戒備著的男人身影。儘管負傷仍試圖戰鬥的姿態，令人感覺到他不想認輸的不屈精神。這是張再次詢問自身戰鬥理由的牌。",
@@ -1135,9 +1108,6 @@ export const wandsCards: TarotCard[] = [
     arcana: "minor",
     suit: "wands",
     number: 10,
-    image: {
-      url: "/images/rider-waite/Wands10.png",
-    },
     description: {
       en: "The card shows a man carrying many wands in his arms, and from his posture one can even feel an attachment that says, \"I absolutely will not let go.\" This card presents a choice: what should be held onto, and what should be released.",
       zh: "牌面上的是懷抱著好幾根權杖的男人身影，從他的姿態甚至能感覺到一股「絕對不放手」的執著。這張牌會拋出選擇，告訴你什麼該掌握住，什麼應該放手。",
@@ -1260,9 +1230,6 @@ export const wandsCards: TarotCard[] = [
     arcana: "minor",
     suit: "wands",
     number: 11,
-    image: {
-      url: "/images/rider-waite/Wands11.png",
-    },
     description: {
       en: "The card shows a boy responsible for delivering messages. From the way he looks up at a wand taller than himself, you can feel his openness and sincerity. It embodies a pure hope for the future and the passion to bring it to life.",
       zh: "牌面上繪製的是負責傳遞訊息的少年。從仰望比自己高大的權杖的模樣，可以感覺出他的坦率。呈現對於未來抱持希望的純粹，以及試圖實現的熱情。",
@@ -1385,9 +1352,6 @@ export const wandsCards: TarotCard[] = [
     arcana: "minor",
     suit: "wands",
     number: 12,
-    image: {
-      url: "/images/rider-waite/Wands12.png",
-    },
     description: {
       en: "The card shows a brave young man riding a leaping horse. Although lively and full of charm, he is very difficult to rein in. This is a card of passion and strong impulses that are hard to contain.",
       zh: "牌面上繪製著騎在跳躍的馬上的勇敢青年身影。雖然活潑且充滿魅力，但要控制他可極為困難。這是張呈現難以駕馭的熱情與強烈衝動的牌。",
@@ -1510,9 +1474,6 @@ export const wandsCards: TarotCard[] = [
     arcana: "minor",
     suit: "wands",
     number: 13,
-    image: {
-      url: "/images/rider-waite/Wands13.png",
-    },
     description: {
       en: "This card depicts a woman holding a wand and a sunflower. Her boldly open posture suggests sexual charm, while the black cat at her feet hints at her mysterious, magical nature. This card displays strength that is fully aligned inside and out.",
       zh: "這張牌描繪著手持權杖與向日葵的女性姿態。挑釁般地張開的雙腿令人感覺到性感魅力，腳邊的黑貓則像在展現魔性。是張展現表裡如一的強韌的牌。",
@@ -1635,9 +1596,6 @@ export const wandsCards: TarotCard[] = [
     arcana: "minor",
     suit: "wands",
     number: 14,
-    image: {
-      url: "/images/rider-waite/Wands14.png",
-    },
     description: {
       en: "This card shows a king holding a wand, always prepared to stand up. His posture expresses action and leadership, while the salamander at his feet symbolizes passion and power.",
       zh: "這張牌所描繪的是隨時準備好站起身，手握權杖的國王。其姿勢表現出行動力與領袖魅力，腳邊的沙羅曼達（火蜥蜴）則是熱情與力量的象徵。",
