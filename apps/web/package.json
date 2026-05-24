@@ -10,8 +10,8 @@
     "postinstall": "mkdir -p public/images/rider-waite && cp -r node_modules/@cometpisces/tarot-kit-images/images/* public/images/rider-waite/ 2>/dev/null || true"
   },
   "dependencies": {
-    "@cometpisces/tarot-kit": "^0.1.2",
-    "@cometpisces/tarot-kit-images": "^0.1.0",
+    "@cometpisces/tarot-kit": "^0.2.0",
+    "@cometpisces/tarot-kit-images": "^0.2.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^9.0.1",

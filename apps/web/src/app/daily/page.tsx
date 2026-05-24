@@ -17,6 +17,7 @@ import {
   getLocalizedText,
   type DrawnCard,
 } from "@cometpisces/tarot-kit";
+import { getImagePath } from "@cometpisces/tarot-kit-images";
 import { TarotCardImage } from "@/components/TarotCardImage";
 import { ReadingAspectSection } from "@/components/ReadingAspectSection";
 import { ContextualMeaningSection } from "@/components/ContextualMeaningSection";
@@ -180,7 +181,7 @@ export default function DailyPage() {
               }}
             >
               <TarotCardImage
-                imageUrl={drawnCard.card.image.url}
+                imageUrl={`/images/rider-waite/${getImagePath(drawnCard.card.id)}`}
                 alt={getLocalizedText(drawnCard.card.name, lang)}
                 isReversed={drawnCard.orientation === "reversed"}
                 maxWidth={250}

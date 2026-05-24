@@ -25,6 +25,7 @@ import {
   type SupportedLanguage,
   type TarotCard,
 } from "@cometpisces/tarot-kit";
+import { getImagePath } from "@cometpisces/tarot-kit-images";
 import { TarotCardImage } from "@/components/TarotCardImage";
 import { ReadingAspectSection } from "@/components/ReadingAspectSection";
 import { ContextualMeaningSection } from "@/components/ContextualMeaningSection";
@@ -181,7 +182,7 @@ export default function CardsPage() {
                     }}
                   >
                     <TarotCardImage
-                      imageUrl={card.image.url}
+                      imageUrl={`/images/rider-waite/${getImagePath(card.id)}`}
                       alt={getLocalizedText(card.name, lang)}
                       glowColor={suitTone.glow}
                       maxWidth="100%"
@@ -255,7 +256,7 @@ export default function CardsPage() {
                   {/* Card Image and Basic Info */}
                   <Box>
                     <TarotCardImage
-                      imageUrl={selectedCard.image.url}
+                      imageUrl={`/images/rider-waite/${getImagePath(selectedCard.id)}`}
                       alt={getLocalizedText(selectedCard.name, lang)}
                       isReversed={orientationTab === 1}
                       maxWidth={220}
