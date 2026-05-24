@@ -3,6 +3,8 @@ export type {
   MinorArcanaSuit,
   CardOrientation,
   TarotCardMeaning,
+  TarotCardReadingAspects,
+  TarotCardContextualMeanings,
   TarotCard,
   DrawnCard,
 } from "./types/card.js";
