@@ -54,8 +54,7 @@ export default function CardsPage() {
         <Stack
           direction={{ xs: "column", sm: "row" }}
           spacing={2}
-          alignItems={{ sm: "center" }}
-          justifyContent="space-between"
+          sx={{ alignItems: { sm: "center" }, justifyContent: "space-between" }}
         >
           <ToggleButtonGroup
             value={filter}

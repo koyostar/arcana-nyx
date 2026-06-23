@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { getAllCards } from "@cometpisces/tarot-kit";
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
 
@@ -27,20 +26,10 @@ export default function Home() {
         </Box>
 
         <Stack direction="row" spacing={2}>
-          <Button
-            component={Link}
-            href="/daily"
-            variant="contained"
-            color="primary"
-          >
+          <Button href="/daily" variant="contained" color="primary">
             Daily Draw
           </Button>
-          <Button
-            component={Link}
-            href="/cards"
-            variant="outlined"
-            color="primary"
-          >
+          <Button href="/cards" variant="outlined" color="primary">
             Card Library
           </Button>
         </Stack>
