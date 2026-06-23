@@ -26,20 +26,20 @@ yarn add @cometpisces/tarot-kit
 ### Import Card Data
 
 ```typescript
-import { cards, getAllCards, getCardById } from '@cometpisces/tarot-kit';
+import { cards, getAllCards, getCardById } from "@cometpisces/tarot-kit";
 
 // Get all 78 cards
 const allCards = getAllCards();
 
 // Get a specific card by ID
-const fool = getCardById('major-00-fool');
+const fool = getCardById("major-00-fool");
 console.log(fool.name); // "The Fool"
 ```
 
 ### Draw Random Cards
 
 ```typescript
-import { drawRandomCard, drawCards } from '@cometpisces/tarot-kit';
+import { drawRandomCard, drawCards } from "@cometpisces/tarot-kit";
 
 // Draw a single card
 const singleCard = drawRandomCard();
@@ -47,7 +47,7 @@ console.log(singleCard.card.name, singleCard.orientation); // e.g., "The Fool", 
 
 // Draw multiple cards (e.g., 3-card spread)
 const threeCards = drawCards(3);
-threeCards.forEach(drawn => {
+threeCards.forEach((drawn) => {
   console.log(`${drawn.card.name} (${drawn.orientation})`);
 });
 ```
@@ -55,11 +55,11 @@ threeCards.forEach(drawn => {
 ### Get Card Meanings
 
 ```typescript
-import { getCardMeaning } from '@cometpisces/tarot-kit';
+import { getCardMeaning } from "@cometpisces/tarot-kit";
 
-const fool = getCardById('major-00-fool');
-const upright = getCardMeaning(fool, 'upright');
-const reversed = getCardMeaning(fool, 'reversed');
+const fool = getCardById("major-00-fool");
+const upright = getCardMeaning(fool, "upright");
+const reversed = getCardMeaning(fool, "reversed");
 
 console.log(upright.general); // General upright meaning
 console.log(reversed.general); // General reversed meaning
@@ -68,25 +68,25 @@ console.log(reversed.general); // General reversed meaning
 ### Filter by Arcana
 
 ```typescript
-import { getCardsByArcana } from '@cometpisces/tarot-kit';
+import { getCardsByArcana } from "@cometpisces/tarot-kit";
 
 // Get all Major Arcana cards
-const majorArcana = getCardsByArcana('major');
+const majorArcana = getCardsByArcana("major");
 
 // Get all Minor Arcana cards
-const minorArcana = getCardsByArcana('minor');
+const minorArcana = getCardsByArcana("minor");
 ```
 
 ### Localization
 
 ```typescript
-import { getLocalizedText } from '@cometpisces/tarot-kit';
+import { getLocalizedText } from "@cometpisces/tarot-kit";
 
-const fool = getCardById('major-00-fool');
+const fool = getCardById("major-00-fool");
 
 // Get name in different languages
-const nameInEnglish = getLocalizedText(fool.name, 'en'); // "The Fool"
-const nameInChinese = getLocalizedText(fool.name, 'zh'); // "愚者"
+const nameInEnglish = getLocalizedText(fool.name, "en"); // "The Fool"
+const nameInChinese = getLocalizedText(fool.name, "zh"); // "愚者"
 ```
 
 ## TypeScript Support
@@ -94,16 +94,16 @@ const nameInChinese = getLocalizedText(fool.name, 'zh'); // "愚者"
 This package is written in TypeScript and includes full type definitions.
 
 ```typescript
-import type { 
-  TarotCard, 
-  DrawnCard, 
+import type {
+  TarotCard,
+  DrawnCard,
   CardOrientation,
-  TarotCardMeaning 
-} from '@cometpisces/tarot-kit';
+  TarotCardMeaning,
+} from "@cometpisces/tarot-kit";
 
-const card: TarotCard = getCardById('major-00-fool');
+const card: TarotCard = getCardById("major-00-fool");
 const drawn: DrawnCard = drawRandomCard();
-const orientation: CardOrientation = 'upright';
+const orientation: CardOrientation = "upright";
 ```
 
 ## Card Data Structure

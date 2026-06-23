@@ -31,6 +31,7 @@ SOFTWARE.
 The Rider-Waite tarot card images included in this package are believed to be in the public domain in many jurisdictions. However, their copyright status may vary by country and intended use.
 
 **Users are responsible for:**
+
 - Verifying the licensing requirements in their jurisdiction
 - Ensuring compliance with applicable copyright laws
 - Obtaining necessary permissions for commercial use if required

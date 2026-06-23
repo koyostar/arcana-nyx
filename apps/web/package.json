@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
+    "lint": "eslint --max-warnings=0",
+    "typecheck": "tsc --noEmit",
     "postinstall": "mkdir -p public/images/rider-waite && cp -r node_modules/@cometpisces/tarot-kit-images/images/* public/images/rider-waite/ 2>/dev/null || true"
   },
   "dependencies": {

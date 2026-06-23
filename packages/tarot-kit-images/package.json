@@ -18,7 +18,8 @@
     "images"
   ],
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "typescript": "^6.0.2"

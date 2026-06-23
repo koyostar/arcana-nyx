@@ -4,6 +4,7 @@ import { Cinzel, Inter } from "next/font/google";
 import { AppNavbar } from "./AppNavbar";
 import { BottomNav } from "./BottomNav";
 import { Providers } from "./providers";
+import "../theme/fonts.css";
 
 const bodyFont = Inter({
   subsets: ["latin"],
@@ -28,18 +29,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${bodyFont.variable} ${displayFont.variable}`}>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@300;400;700&family=WDXL+Lubrifont+SC&display=swap"
-          rel="stylesheet"
-        />
-      </head>
       <body
         style={{
           margin: 0,

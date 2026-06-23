@@ -1,15 +1,30 @@
 {
   "name": "arcana-nyx",
   "private": true,
+  "packageManager": "pnpm@10.7.0",
   "scripts": {
     "dev": "pnpm --filter web dev",
-    "build": "pnpm --filter web build",
-    "lint": "pnpm --filter web lint"
+    "build": "pnpm -r --if-present build",
+    "check": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm build",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "pnpm --filter web lint",
+    "prepare": "husky",
+    "typecheck": "pnpm -r --if-present typecheck"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^9.0.0",
     "@mui/material": "^9.0.0"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.8",
+    "prettier": "^3.8.4"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,mjs,cjs,json,md,css}": "prettier --write",
+    "apps/web/**/*.{js,jsx,ts,tsx}": "pnpm --filter web exec eslint --fix --max-warnings=0 --no-warn-ignored"
   }
 }
