@@ -37,6 +37,9 @@ export interface TarotCard {
   meaning: TarotCardMeaning;
   readingAspects: TarotCardReadingAspects;
   contextualMeanings: TarotCardContextualMeanings;
+  image?: {
+    url: string;
+  };
 }
 
 export interface DrawnCard {
