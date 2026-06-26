@@ -11,7 +11,14 @@ export type {
 
 export { cards } from "./data/cards.js";
 export { getAllCards, getCardById, getCardsByArcana } from "./helpers/cards.js";
-export { drawRandomCard, drawCards, getCardMeaning } from "./helpers/draw.js";
+export {
+  drawRandomCard,
+  drawCards,
+  drawRandomCardFrom,
+  drawCardsFrom,
+  shuffleCards,
+  getCardMeaning,
+} from "./helpers/draw.js";
 export { validateUniqueCardIds } from "./helpers/validate.js";
 
 export type { SupportedLanguage, LocalizedText } from "./types/common.js";

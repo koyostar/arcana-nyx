@@ -52,6 +52,30 @@ threeCards.forEach((drawn) => {
 });
 ```
 
+### Draw From a Specific Deck
+
+```typescript
+import {
+  getAllCards,
+  getCardsByArcana,
+  shuffleCards,
+  drawRandomCardFrom,
+  drawCardsFrom,
+} from "@cometpisces/tarot-kit";
+
+const allCards = getAllCards();
+const majorArcana = getCardsByArcana(allCards, "major");
+const shuffledMajor = shuffleCards(majorArcana);
+
+const oneCard = drawRandomCardFrom(shuffledMajor);
+console.log(oneCard.card.name, oneCard.orientation);
+
+const threeCards = drawCardsFrom(shuffledMajor, 3);
+threeCards.forEach((drawn) => {
+  console.log(`${drawn.card.name} (${drawn.orientation})`);
+});
+```
+
 ### Get Card Meanings
 
 ```typescript

@@ -1,6 +1,6 @@
 {
   "name": "@cometpisces/tarot-kit",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Complete Rider-Waite tarot deck data with card meanings, drawing utilities, and localization - TypeScript library for building tarot reading apps",
   "license": "MIT",
   "type": "module",
