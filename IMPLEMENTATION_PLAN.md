@@ -172,8 +172,8 @@ Key types:
 - Shared `AppNavbar` added
 - Shared `BottomNav` added
 - `Providers` wrapper added for MUI/theme setup
-- `layout.tsx` updated to use `next/font/google` for Inter and Cinzel
-- Manual Google font `<link>` tags remain for Chinese display/body fonts and still need cleanup
+- `layout.tsx` updated to use local CSS font variables for the app shell
+- Chinese font stack is now handled through local fallbacks instead of remote Google font loads
 
 ---
 
@@ -194,26 +194,26 @@ Key types:
 - Home page — card count summary, navigation to Daily Draw and Card Library
 - Shared app shell — top navigation, bottom navigation, MUI provider/theme integration
 - Fixed Client Component error (added `"use client"` to page.tsx)
+- Daily Draw now locks one draw per day and restores the saved card from localStorage
+- App shell now uses local CSS font variables so the web build no longer depends on remote font fetches
 - Package builds pass:
   - `pnpm --filter @cometpisces/tarot-kit build`
   - `pnpm --filter @cometpisces/tarot-kit-images build`
-- Web checks pass:
-  - `pnpm --filter web lint` passes with warnings only
-  - `pnpm --filter web build` passes when network access is available for Google font fetches
+- Web build passes with the local font setup in place
 
 ### In Progress
 
-- Daily Draw lock (one draw per day, stored locally)
-- Custom font loading cleanup in `layout.tsx`
+- Daily Draw deck simulation and deck-scope selection
+- Daily Draw result modal / bottom-sheet experience
+- localStorage-based reading history and persistence utilities
 - Python validation/data export cleanup
 
 ### Known Issues
 
-- Manual font `<link>` tags in `apps/web/src/app/layout.tsx` trigger `@next/next/no-page-custom-font`
-- `apps/web/src/app/cards/page.tsx` has an unused `Image` import lint warning
+- `apps/web/src/app/cards/page.tsx` still has an unused `Image` import lint warning
 - `tools/python/cards.generated.json` is stale/incomplete and currently contains only 3 cards
-- `tools/python/scripts/validate_cards.py` is minimal and does not yet validate the full required shape
-- `next/font/google` requires network access during production builds unless fonts are made local/self-hosted
+- `tools/python/scripts/validate_cards.py` is still minimal and does not yet validate the full required shape
+- The next feature work should focus on interaction design before adding storage and sharing behavior
 
 ### Not Started
 
@@ -229,6 +229,24 @@ Key types:
 ---
 
 ## 4. Feature Design Analysis
+
+### Feature Design Kickoff
+
+The next implementation sprint is shifting from foundation work into product-facing interaction design. The primary goals are to make Daily Draw feel tactile, keep the app lightweight for mobile, and define the data contracts for history and persistence before they are wired into the UI.
+
+Design priorities for the next phase:
+
+- Make Daily Draw feel like choosing from a real deck rather than tapping a single card back
+- Keep the experience mobile-first and low-friction
+- Reuse shared deck helpers so Daily Draw, Spread Reading, and Quiz flows all behave consistently
+- Define persistence early so localStorage records remain simple and future-ready for Supabase
+
+Recommended implementation order:
+
+1. Daily Draw deck simulation and scope selection
+2. Draw result modal or bottom sheet
+3. localStorage-based reading history
+4. Spread Reading and Quiz as follow-on feature suites
 
 ### Daily Draw Deck Simulation
 

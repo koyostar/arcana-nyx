@@ -1,21 +1,9 @@
 import type { Metadata } from "next";
 import * as React from "react";
-import { Cinzel, Inter } from "next/font/google";
 import { AppNavbar } from "./AppNavbar";
 import { BottomNav } from "./BottomNav";
 import { Providers } from "./providers";
 import "../theme/fonts.css";
-
-const bodyFont = Inter({
-  subsets: ["latin"],
-  variable: "--font-body",
-});
-
-const displayFont = Cinzel({
-  subsets: ["latin"],
-  variable: "--font-display",
-  weight: ["500", "700"],
-});
 
 export const metadata: Metadata = {
   title: "Arcana Nyx",
@@ -28,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${bodyFont.variable} ${displayFont.variable}`}>
+    <html lang="en">
       <body
         style={{
           margin: 0,
