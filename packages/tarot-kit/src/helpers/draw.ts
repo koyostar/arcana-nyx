@@ -1,6 +1,7 @@
 import { cards } from "../data/cards.js";
+import { getCardsByScope } from "./cards.js";
 import type { TarotCard } from "../types/card.js";
-import { CardOrientation, DrawnCard } from "../types/card.js";
+import { CardOrientation, DeckScope, DrawnCard } from "../types/card.js";
 
 /**
  * Return a random orientation for a drawn card.
@@ -87,6 +88,15 @@ export const drawRandomCard = (): DrawnCard => drawRandomCardFrom(cards);
  */
 export const drawCards = (count: number): DrawnCard[] =>
   drawCardsFrom(cards, count);
+
+export const getDeckByScope = (
+  cardList: TarotCard[] = cards,
+  scope: DeckScope,
+  shuffle = false,
+): TarotCard[] => {
+  const scopedCards = getCardsByScope(cardList, scope);
+  return shuffle ? shuffleCards(scopedCards) : [...scopedCards];
+};
 
 /**
  * Get the localized meaning string for a drawn card.

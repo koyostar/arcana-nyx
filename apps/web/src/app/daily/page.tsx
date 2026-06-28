@@ -1,22 +1,32 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import {
   Box,
   Button,
   Container,
+  Dialog,
+  DialogContent,
+  IconButton,
+  Tab,
+  Tabs,
   Typography,
   Paper,
   Stack,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 import {
   getAllCards,
-  getCardsByArcana,
+  getCardById,
+  getDeckByScope,
   getCardMeaning,
   getLocalizedText,
   shuffleCards,
+  type DeckScope,
   type DrawnCard,
   type TarotCard,
 } from "@cometpisces/tarot-kit";
@@ -24,73 +34,20 @@ import { getImagePath } from "@cometpisces/tarot-kit-images";
 import { TarotCardImage } from "@/components/TarotCardImage";
 import { ReadingAspectSection } from "@/components/ReadingAspectSection";
 import { ContextualMeaningSection } from "@/components/ContextualMeaningSection";
-
-const DAILY_DRAW_STORAGE_KEY = "arcana-nyx-daily-draw";
-
-type DeckScope = "full" | "major" | "minor";
-
-function getTodayKey() {
-  return new Date().toISOString().slice(0, 10);
-}
-
-function readStoredDailyDraw() {
-  if (typeof window === "undefined") {
-    return null;
-  }
-
-  try {
-    const storedValue = window.localStorage.getItem(DAILY_DRAW_STORAGE_KEY);
-    if (!storedValue) {
-      return null;
-    }
-
-    const parsedValue = JSON.parse(storedValue) as {
-      date: string;
-      card: DrawnCard;
-    };
-
-    if (parsedValue.date !== getTodayKey()) {
-      window.localStorage.removeItem(DAILY_DRAW_STORAGE_KEY);
-      return null;
-    }
-
-    return parsedValue;
-  } catch {
-    return null;
-  }
-}
-
-function writeStoredDailyDraw(card: DrawnCard) {
-  if (typeof window === "undefined") {
-    return;
-  }
-
-  window.localStorage.setItem(
-    DAILY_DRAW_STORAGE_KEY,
-    JSON.stringify({ date: getTodayKey(), card }),
-  );
-}
-
-function getCardsForScope(scope: DeckScope): TarotCard[] {
-  const allCards = getAllCards();
-
-  if (scope === "major") {
-    return getCardsByArcana(allCards, "major");
-  }
-
-  if (scope === "minor") {
-    return getCardsByArcana(allCards, "minor");
-  }
-
-  return allCards;
-}
+import {
+  clearDailyDraw,
+  loadDailyDraw,
+  loadDailyHistory,
+  saveDailyDraw,
+  type DailyHistoryRecord,
+} from "@/lib/storage";
 
 function getRandomOrientation(): DrawnCard["orientation"] {
   return Math.random() < 0.5 ? "upright" : "reversed";
 }
 
 export default function DailyPage() {
-  const storedDailyDraw = readStoredDailyDraw();
+  const storedDailyDraw = loadDailyDraw();
   const [drawnCard, setDrawnCard] = useState<DrawnCard | null>(
     storedDailyDraw?.card ?? null,
   );
@@ -102,8 +59,16 @@ export default function DailyPage() {
     if (storedDailyDraw) {
       return [];
     }
-    return shuffleCards(getCardsForScope("full"));
+    return getDeckByScope(getAllCards(), "full", true);
   });
+  const [resultOpen, setResultOpen] = useState<boolean>(
+    () => !!storedDailyDraw,
+  );
+  const [orientationTab, setOrientationTab] = useState(0);
+  const [dailyHistory, setDailyHistory] = useState<DailyHistoryRecord[]>([]);
+  const [isMounted, setIsMounted] = useState(false);
+  const theme = useTheme();
+  const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
   const searchParams = useSearchParams();
   const lang = searchParams.get("lang") === "zh" ? "zh" : "en";
   const text =
@@ -149,6 +114,12 @@ export default function DailyPage() {
         ? "正位"
         : "Upright";
 
+  // Load client-side data after hydration to avoid mismatch
+  useEffect(() => {
+    setIsMounted(true); // eslint-disable-line react-hooks/set-state-in-effect
+    setDailyHistory(loadDailyHistory());
+  }, []);
+
   const handleSelectCard = (card: TarotCard) => {
     if (isDailyLocked || drawnCard) {
       return;
@@ -160,11 +131,32 @@ export default function DailyPage() {
     };
 
     setDrawnCard(nextCard);
+    setResultOpen(true);
     setIsDailyLocked(true);
     setDeckCards((currentDeck) =>
       currentDeck.filter((item) => item.id !== card.id),
     );
-    writeStoredDailyDraw(nextCard);
+    saveDailyDraw(nextCard, deckScope);
+    setDailyHistory((current) => [
+      {
+        date: new Date().toISOString().slice(0, 10),
+        cardId: nextCard.card.id,
+        orientation: nextCard.orientation,
+        deckScope,
+      },
+      ...current.filter(
+        (item) => item.date !== new Date().toISOString().slice(0, 10),
+      ),
+    ]);
+  };
+
+  const handleOpenResults = () => {
+    setResultOpen(true);
+  };
+
+  const handleCloseResults = () => {
+    setResultOpen(false);
+    setOrientationTab(0);
   };
 
   const handleShuffleDeck = () => {
@@ -176,12 +168,10 @@ export default function DailyPage() {
   };
 
   const handleClear = () => {
-    if (typeof window !== "undefined") {
-      window.localStorage.removeItem(DAILY_DRAW_STORAGE_KEY);
-    }
+    clearDailyDraw();
     setDrawnCard(null);
     setIsDailyLocked(false);
-    setDeckCards(shuffleCards(getCardsForScope(deckScope)));
+    setDeckCards(getDeckByScope(getAllCards(), deckScope, true));
   };
 
   return (
@@ -221,7 +211,11 @@ export default function DailyPage() {
                     }
                     setDeckScope(option.value as DeckScope);
                     setDeckCards(
-                      shuffleCards(getCardsForScope(option.value as DeckScope)),
+                      getDeckByScope(
+                        getAllCards(),
+                        option.value as DeckScope,
+                        true,
+                      ),
                     );
                   }}
                   disabled={isDailyLocked}
@@ -283,6 +277,7 @@ export default function DailyPage() {
                     src="/images/arcananyx-tarotlight.png"
                     alt={getLocalizedText(card.name, lang)}
                     fill
+                    sizes="(max-width: 768px) 25vw, 100px"
                     style={{ objectFit: "cover" }}
                   />
                 </Box>
@@ -300,20 +295,72 @@ export default function DailyPage() {
           </Stack>
         )}
 
+        {isMounted && dailyHistory.length > 0 && !drawnCard && (
+          <Paper
+            elevation={0}
+            sx={{
+              p: 2,
+              bgcolor: "rgba(255,255,255,0.04)",
+              border: "1px solid rgba(255,255,255,0.08)",
+            }}
+          >
+            <Typography variant="subtitle2" sx={{ mb: 1, fontWeight: 700 }}>
+              {lang === "zh" ? "历史抽牌" : "Daily Draw History"}
+            </Typography>
+            <Stack spacing={1}>
+              {dailyHistory.slice(0, 3).map((record) => {
+                const card = getCardById(record.cardId);
+                if (!card) return null;
+
+                return (
+                  <Box
+                    key={record.date}
+                    sx={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      gap: 1,
+                    }}
+                  >
+                    <Typography variant="body2" color="text.secondary">
+                      {record.date}
+                    </Typography>
+                    <Typography variant="body2" sx={{ fontWeight: 600 }}>
+                      {getLocalizedText(card.name, lang)}
+                    </Typography>
+                    <Typography variant="caption" color="text.secondary">
+                      {record.orientation === "reversed"
+                        ? lang === "zh"
+                          ? "逆位"
+                          : "Reversed"
+                        : lang === "zh"
+                          ? "正位"
+                          : "Upright"}
+                    </Typography>
+                  </Box>
+                );
+              })}
+            </Stack>
+          </Paper>
+        )}
+
         {/* Action buttons (shown when card is drawn) */}
         {drawnCard && (
-          <Stack direction="column" spacing={1.25}>
-            <Button variant="contained" color="primary" onClick={handleClear}>
-              {text.clear}
+          <Stack direction="row" spacing={1.25}>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={handleOpenResults}
+            >
+              {lang === "zh" ? "查看詳情" : "View details"}
             </Button>
             <Button variant="outlined" onClick={handleClear}>
-              {lang === "zh" ? "重新开始" : "Start over"}
+              {lang === "zh" ? "重新開始" : "Reset"}
             </Button>
           </Stack>
         )}
 
-        {/* Drawn card display */}
-        {/* Drawn card display */}
+        {/* Drawn card summary */}
         {drawnCard && (
           <Stack spacing={3}>
             {/* Card Image */}
@@ -451,19 +498,189 @@ export default function DailyPage() {
               </Box>
             </Paper>
 
-            {/* Reading Aspects */}
-            <ReadingAspectSection
-              readingAspects={drawnCard.card.readingAspects}
-              orientation={drawnCard.orientation}
-              language={lang}
-            />
+            <Dialog
+              open={resultOpen}
+              onClose={handleCloseResults}
+              maxWidth="sm"
+              fullWidth
+              fullScreen={isSmall}
+              slotProps={{
+                paper: {
+                  sx: {
+                    bgcolor: "background.default",
+                    backgroundImage: "none",
+                    maxHeight: isSmall ? "85vh" : "90vh",
+                    borderRadius: isSmall ? "12px 12px 0 0" : undefined,
+                    position: isSmall ? "fixed" : undefined,
+                    left: isSmall ? 0 : undefined,
+                    right: isSmall ? 0 : undefined,
+                    bottom: isSmall ? 0 : undefined,
+                    margin: isSmall ? 0 : undefined,
+                  },
+                },
+              }}
+            >
+              {drawnCard && (
+                <>
+                  <IconButton
+                    onClick={handleCloseResults}
+                    sx={{
+                      position: "absolute",
+                      right: 8,
+                      top: 8,
+                      color: "text.secondary",
+                      zIndex: 1,
+                    }}
+                  >
+                    <CloseIcon />
+                  </IconButton>
+                  <DialogContent sx={{ p: 3 }}>
+                    <Stack spacing={3}>
+                      <Box>
+                        <TarotCardImage
+                          imageUrl={`/images/rider-waite/${getImagePath(
+                            drawnCard.card.id,
+                          )}`}
+                          alt={getLocalizedText(drawnCard.card.name, lang)}
+                          isReversed={
+                            orientationTab === 1 ||
+                            drawnCard.orientation === "reversed"
+                          }
+                          maxWidth={220}
+                          glowColor="rgba(139,124,246,0.22)"
+                          sx={{ mx: "auto" }}
+                        />
+                        <Box sx={{ textAlign: "center", mt: 2 }}>
+                          <Typography
+                            variant="h5"
+                            sx={{ fontWeight: 700, mb: 1 }}
+                          >
+                            {getLocalizedText(drawnCard.card.name, lang)}
+                          </Typography>
+                          <Box
+                            sx={{
+                              display: "inline-flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              px: 1.2,
+                              py: 0.35,
+                              borderRadius: 999,
+                              bgcolor:
+                                drawnCard.orientation === "reversed"
+                                  ? "rgba(239,166,200,0.12)"
+                                  : "rgba(242,211,139,0.12)",
+                              color:
+                                drawnCard.orientation === "reversed"
+                                  ? "#EFA6C8"
+                                  : "#F2D38B",
+                              border:
+                                drawnCard.orientation === "reversed"
+                                  ? "1px solid rgba(239,166,200,0.36)"
+                                  : "1px solid rgba(242,211,139,0.36)",
+                              fontSize: 12,
+                              letterSpacing: 0.5,
+                              mb: 0.5,
+                            }}
+                          >
+                            {orientationLabel}
+                          </Box>
+                        </Box>
 
-            {/* Contextual Meanings */}
-            <ContextualMeaningSection
-              contextualMeanings={drawnCard.card.contextualMeanings}
-              orientation={drawnCard.orientation}
-              language={lang}
-            />
+                        <Box sx={{ mt: 2.2, textAlign: "center" }}>
+                          <Typography
+                            variant="caption"
+                            color="secondary.main"
+                            sx={{
+                              textTransform: "uppercase",
+                              letterSpacing: "0.15em",
+                              fontSize: "0.7rem",
+                            }}
+                          >
+                            {text.coreKeyword}
+                          </Typography>
+                          <Typography
+                            variant="h6"
+                            sx={{
+                              fontFamily:
+                                'var(--font-display), "Cinzel", serif',
+                              color: "primary.light",
+                              mt: 0.5,
+                            }}
+                          >
+                            {getLocalizedText(drawnCard.card.coreKeyword, lang)}
+                          </Typography>
+                        </Box>
+
+                        <Box sx={{ mt: 2.5 }}>
+                          <Typography
+                            variant="subtitle2"
+                            color="secondary.main"
+                          >
+                            {text.description}
+                          </Typography>
+                          <Typography
+                            variant="body2"
+                            color="text.secondary"
+                            sx={{ mt: 0.5 }}
+                          >
+                            {getLocalizedText(drawnCard.card.description, lang)}
+                          </Typography>
+                        </Box>
+                      </Box>
+
+                      <Tabs
+                        value={orientationTab}
+                        onChange={(_, v) => setOrientationTab(v)}
+                        variant="fullWidth"
+                        sx={{
+                          borderBottom: 1,
+                          borderColor: "divider",
+                          "& .MuiTab-root": {
+                            fontWeight: 700,
+                          },
+                        }}
+                      >
+                        <Tab label={lang === "zh" ? "正位" : "Upright"} />
+                        <Tab label={lang === "zh" ? "逆位" : "Reversed"} />
+                      </Tabs>
+
+                      <Box>
+                        <Typography variant="subtitle2" color="secondary.main">
+                          {text.meaning}
+                        </Typography>
+                        <Typography
+                          variant="body2"
+                          color="text.secondary"
+                          sx={{ mt: 0.5 }}
+                        >
+                          {
+                            drawnCard.card.meaning[
+                              orientationTab === 0 ? "upright" : "reversed"
+                            ][lang]
+                          }
+                        </Typography>
+                      </Box>
+
+                      <ReadingAspectSection
+                        readingAspects={drawnCard.card.readingAspects}
+                        orientation={
+                          orientationTab === 0 ? "upright" : "reversed"
+                        }
+                        language={lang}
+                      />
+
+                      <ContextualMeaningSection
+                        contextualMeanings={drawnCard.card.contextualMeanings}
+                        orientation={
+                          orientationTab === 0 ? "upright" : "reversed"
+                        }
+                        language={lang}
+                      />
+                    </Stack>
+                  </DialogContent>
+                </>
+              )}
+            </Dialog>
           </Stack>
         )}
       </Stack>

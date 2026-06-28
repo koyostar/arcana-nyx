@@ -26,6 +26,8 @@ export interface TarotCardContextualMeanings {
   others: TarotCardMeaning;
 }
 
+export type DeckScope = "full" | "major" | "minor";
+
 export interface TarotCard {
   id: string;
   name: LocalizedText;

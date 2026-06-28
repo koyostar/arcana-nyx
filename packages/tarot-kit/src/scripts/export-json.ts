@@ -1,5 +1,6 @@
 import { writeFileSync } from "node:fs";
 import { resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import { cards } from "../data/cards.js";
 
 const imageMap: Record<string, string> = {
@@ -91,8 +92,8 @@ const exportedCards = cards.map((card) => ({
 }));
 
 const outputPath = resolve(
-  process.cwd(),
-  "../../tools/python/cards.generated.json",
+  fileURLToPath(new URL("../../../../", import.meta.url)),
+  "tools/python/cards.generated.json",
 );
 
 writeFileSync(outputPath, JSON.stringify(exportedCards, null, 2), "utf-8");

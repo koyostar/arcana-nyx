@@ -17,6 +17,8 @@ REQUIRED_FIELDS = {
     "image": dict,
 }
 
+ALLOWED_ARCANA = {"major", "minor"}
+ALLOWED_SUITS = {"wands", "cups", "swords", "pentacles"}
 REQUIRED_LOCALIZED_FIELDS = {"en", "zh"}
 REQUIRED_MEANING_FIELDS = {"upright", "reversed"}
 REQUIRED_READING_ASPECTS_FIELDS = {
@@ -100,6 +102,20 @@ def validate_cards(cards: list[dict], expected_count: int | None = None) -> None
         _ensure_localized_text(card["description"], card_id, "description")
         _ensure_localized_text(card["coreKeyword"], card_id, "coreKeyword")
         _ensure_meaning_block(card["meaning"], card_id, "meaning")
+
+        if card["arcana"] not in ALLOWED_ARCANA:
+            raise ValueError(f"Card '{card_id}' has invalid arcana '{card['arcana']}'.")
+
+        if card["arcana"] == "major":
+            if card["suit"] is not None:
+                raise ValueError(f"Major arcana card '{card_id}' must not have a suit.")
+            if not 0 <= card["number"] <= 21:
+                raise ValueError(f"Major arcana card '{card_id}' has invalid number {card['number']}.")
+        else:
+            if not isinstance(card["suit"], str) or card["suit"] not in ALLOWED_SUITS:
+                raise ValueError(f"Minor arcana card '{card_id}' has invalid suit '{card['suit']}'.")
+            if not 1 <= card["number"] <= 14:
+                raise ValueError(f"Minor arcana card '{card_id}' has invalid number {card['number']}.")
 
         reading_aspects = card["readingAspects"]
         for aspect_name in REQUIRED_READING_ASPECTS_FIELDS:
