@@ -51,8 +51,8 @@ export function TarotCardImage({
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            width: 220,
-            height: 220,
+            width: "150%",
+            height: "90%",
             background: `radial-gradient(circle, ${glowColor}40, transparent 70%)`,
             zIndex: 0,
             pointerEvents: "none",
@@ -66,7 +66,7 @@ export function TarotCardImage({
           position: "relative",
           width: "100%",
           // 70mm × 120mm = 171.4% padding-top (height/width ratio)
-          pt: "171.4%",
+          aspectRatio: "70 / 120",
           borderRadius: 0.5,
           overflow: "hidden",
           boxShadow:

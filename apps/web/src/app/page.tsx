@@ -11,32 +11,12 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
+import { getHomePageText } from "@/lib/glossary";
 
 export default function Home() {
   const searchParams = useSearchParams();
   const lang = searchParams.get("lang") === "zh" ? "zh" : "en";
-  const text =
-    lang === "zh"
-      ? {
-          title: "夜祇司",
-          subtitle: "塔罗占卜与学习伙伴。",
-          stats: "已载入",
-          cards: "张牌",
-          major: "大阿卡纳",
-          minor: "小阿卡纳",
-          daily: "每日抽牌",
-          library: "牌库",
-        }
-      : {
-          title: "Arcana Nyx",
-          subtitle: "A tarot reading and learning companion.",
-          stats: "cards loaded",
-          cards: "cards",
-          major: "major arcana",
-          minor: "minor arcana",
-          daily: "Daily Draw",
-          library: "Card Library",
-        };
+  const text = getHomePageText(lang);
   const cards = getAllCards();
   const majorCount = cards.filter((c) => c.arcana === "major").length;
   const minorCount = cards.filter((c) => c.arcana === "minor").length;
